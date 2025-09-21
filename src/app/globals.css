@@ -30,4 +30,14 @@ body {
   overflow-y: visible;
   padding: 0;
   margin: 0;
+  background: #FEF4EA;
+}
+.trial {
+  font-family: var(--font-satoshi), sans-serif;
+}
+.trial2 {
+  font-family: 'Times New Roman', Times, serif;
+}
+.trialheader {
+  font-family: var(--font-monumentExtended), sans-serif;
 }

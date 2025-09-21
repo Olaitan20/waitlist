@@ -1,83 +1,93 @@
-"use client";
-
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { socialLinks } from "../app/data/index.jsx";
-import Logo from "./shared/Logo";
+// components/Footer.js
+import Link from 'next/link';
+import Logo from './shared/Logo';
 
 const Footer = () => {
-  const year = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="container mx-auto px-4 md:px-10 lg:px-0 pt-10 space-y-6 text-[13px] md:text-[15px]">
-      {/* Social Icons for mobile only - above the line */}
-      <div className="flex justify-center gap-4 xl:hidden">
-        {socialLinks.map((link) => (
-          <Link
-            href={link.url}
-            key={link.alt + "-mobile-footer"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#7140EB] transition-colors"
-          >
-            <Image
-              src={link.src}
-              width={50}
-              height={50}
-              alt={link.alt}
-              className="size-8 transition-colors"
-            />
-          </Link>
-        ))}
-      </div>
-
-      {/* Divider */}
-      <hr className="bg-[#B698FF]" />
-
-      {/* Logo + Copyright */}
-      <div className="space-y-4 text-center md:text-center">
-        <div className="flex justify-center xl:hidden">
-          <Logo showText />
-        </div>
-
-        <div className="font-medium xl:hidden">
-          ©{year} A.bio.Inc. <span className="">All rights reserved</span>
-        </div>
-      </div>
-
-      {/* Terms + Cookie Policy */}
-      <div className="flex justify-center xl:hidden gap-6 text-sm ">
-        <Link href="/terms" className="hover:text-[#7140EB]">Terms</Link>
-        <Link href="/policy" className="hover:text-[#7140EB]">Policy</Link>
-      </div>
-
-      {/* Desktop Footer Row (Logo, Icons, Copyright) */}
-      <div className="hidden xl:flex justify-between items-center">
-        <div className="text-sm">
-          ©{year} A.bio.Inc. All rights reserved
-        </div>
-        <div className="flex gap-3">
-            
-          {socialLinks.map((link) => (
-            <Link
-              href={link.url}
-              key={link.alt + "-desktop-footer"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#7140EB] transition-colors"
-            >
-              <Image
-                src={link.src}
-                width={50}
-                height={50}
-                alt={link.alt}
-                className="size-8 transition-colors"
-              />
-            </Link>
-          ))}
+    <footer className="bg-[#331400] -mt-24 text-white py-16">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          {/* Brand Section */}
+          <div className="md:col-span-2">
+            <div className="flex items-center space-x-2 mb-4">
+              <Logo width={40} height={40} showText={true} textSize="text-xl" />
+      
+            </div>
+            {/* <p className="text-amber-100 mb-4 max-w-md">
+              A.Bio is a free platform to use, but premium & it one page link 
+              gives you audience efficiently, and track results.
+            </p>
+            <p className="text-amber-100">
+              to boost your business at front levels
+              your social media game.
+            </p> */}
+          </div>
+          
+          {/* Product Links */}
+          <div>
+            <h3 className="font-bold trial text-xl mb-4">Product</h3>
+            <div className="space-y-4 font-thin text-[13px]">
+              <Link href="#" className="block text-white hover:text-white transition-colors">
+                Features
+              </Link>
+              <Link href="#" className="block text-white hover:text-white transition-colors">
+                How it works
+              </Link>
+              <Link href="#" className="block text-white hover:text-white transition-colors">
+                Setup
+              </Link>
+              <Link href="#" className="block text-white hover:text-white transition-colors">
+                FAQ
+              </Link>
+            </div>
+          </div>
+          
+          {/* Legal Links */}
+          <div>
+            <h3 className="font-bold trial text-xl mb-4">Legal</h3>
+            <div className="space-y-4 font-thin text-[13px]">
+              <Link href="#" className="block text-white hover:text-white transition-colors">
+                Terms of Service
+              </Link>
+              <Link href="#" className="block text-white hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="#" className="block text-white hover:text-white transition-colors">
+                Community Guidelines
+              </Link>
+              <Link href="#" className="block text-white hover:text-white transition-colors">
+                Cookie Policy
+              </Link>
+            </div>
+          </div>
         </div>
         
+        {/* Bottom Section */}
+        <div className="border-t border-amber-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-white text-sm mb-4 md:mb-0">
+              © {currentYear} A.Bio site. One Link Endless Connections
+            </p>
+            
+            {/* Social Icons */}
+            <div className="flex space-x-4">
+              <a href="#" className="w-8 h-8 bg-amber-800 rounded-lg flex items-center justify-center hover:bg-amber-700 transition-colors">
+                <span className="text-xs">📘</span>
+              </a>
+              <a href="#" className="w-8 h-8 bg-amber-800 rounded-lg flex items-center justify-center hover:bg-amber-700 transition-colors">
+                <span className="text-xs">📷</span>
+              </a>
+              <a href="#" className="w-8 h-8 bg-amber-800 rounded-lg flex items-center justify-center hover:bg-amber-700 transition-colors">
+                <span className="text-xs">🐦</span>
+              </a>
+              <a href="#" className="w-8 h-8 bg-amber-800 rounded-lg flex items-center justify-center hover:bg-amber-700 transition-colors">
+                <span className="text-xs">💼</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
