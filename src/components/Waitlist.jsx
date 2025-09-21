@@ -117,21 +117,21 @@ const Waitlist = () => {
         <div className="grid grid-cols-1 bg-[#FFDCE3] md:grid-cols-3 gap-8 mb-12">
           <div className="p-6">
             <div className="text-3xl font-bold text-gray-800 mb-2">
-              <Counter target={10000} />
+              <Counter target={1000} />
             </div>
             <div className="text-gray-600">People on Waitlist</div>
           </div>
           <div className="p-6">
             <div className="text-3xl font-bold text-gray-800 mb-2">
-              <Counter target={2000} />
+              <Counter target={200} />
             </div>
             <div className="text-gray-600">Joined Recently</div>
           </div>
           <div className="p-6">
             <div className="text-3xl font-bold text-gray-800 mb-2">
-              <Counter target={100} suffix="%" />
+              <Counter target={49000}/>
             </div>
-            <div className="text-gray-600">From Countries</div>
+            <div className="text-gray-600">to go</div>
           </div>
         </div>
 
@@ -147,9 +147,9 @@ const Waitlist = () => {
           />
           <button
             type="submit"
-            className="absolute top-1/2 right-2 -translate-y-1/2 bg-[#FED45C] shadow-[2px_2px_0px_0px_#000000] text-[#FF0000] px-4 py-2 font-semibold hover:bg-yellow-600 transition-colors"
+            className="absolute top-1/2 right-2 -translate-y-1/2 bg-[#FED45C] shadow-[2px_2px_0px_0px_#000000] text-[#FF0000] px-4 py-2 font-semibold "
           >
-            Join waitlist
+            Waitlist
           </button>
         </form>
 
@@ -167,11 +167,11 @@ const Waitlist = () => {
         </div>
 
         {/* Large A.Bio branding */}
-        <div className="mt-20 opacity-10">
+        {/* <div className="mt-20 opacity-10">
           <div className="text-6xl md:text-9xl font-bold text-gray-400 tracking-wider">
             <Logo width={400} height={400} showText={true} textSize="text-20xl" />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

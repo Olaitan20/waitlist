@@ -29,31 +29,42 @@ const Features = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // title
-      gsap.from(titleRef.current, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
-      })
+// title
+gsap.fromTo(
+  titleRef.current,
+  { opacity: 0, y: 50 },
+  {
+    opacity: 1,
+    y: 0,
+    ease: "none", // keeps it linear
+    scrollTrigger: {
+      trigger: sectionRef.current,
+      start: "top 80%",
+      end: "top 30%", // controls how long it animates
+      scrub: true,    // allows both directions
+    },
+  }
+)
 
-      // feature cards
-      gsap.from(cardsRef.current, {
-        opacity: 0,
-        y: 60,
-        scale: 0.95,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 70%",
-        },
-      })
+// feature cards
+gsap.fromTo(
+  cardsRef.current,
+  { opacity: 0, y: 60, scale: 0.95 },
+  {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    ease: "none",
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: sectionRef.current,
+      start: "top 70%",
+      end: "top 20%",
+      scrub: true,   // smooth back-and-forth
+    },
+  }
+)
+
 
       // decorative stars/icons (subtle float)
       starsRef.current.forEach((star, i) => {
@@ -74,15 +85,15 @@ const Features = () => {
     <section
       id="features"
       ref={sectionRef}
-      className="py-10 relative md:py-20 mx-4 md:mx-10 bg-[#FFDCE3]"
+      className="py-10 relative md:py-20 -mt-10 md:-mt-20 mb-4 md:mx-10 bg-[#FFDCE3]"
     >
       <div className="max-w-6xl mx-auto px-6">
-        <Image
+        {/* <Image
           src="/icons/Star 6.svg"
           alt=""
           height="50"
           width="50"
-          ref={addStarRef}
+          
           className="hidden md:block md:w-30 absolute -top-6 md:top-0 -left-4 md:left-0 md:h-30"
         />
         <Image
@@ -90,9 +101,9 @@ const Features = () => {
           alt=""
           height="50"
           width="50"
-          ref={addStarRef}
-          className="hidden md:block md:w-30 absolute -top-6 md:-top-2 rotate-90 -right-8 md:h-30"
-        />
+          
+          className="hidden md:block md:w-30 absolute -top-6 md:-top-2 rotate-90 -right-1 md:h-30"
+        /> */}
 
         <h2
           ref={titleRef}
@@ -148,14 +159,14 @@ const Features = () => {
             ref={addCardRef}
             className="bg-[#582C29] md:col-span-2 p-8 text-white relative overflow-hidden"
           >
-            <h3 className="text-4xl trial2 italic font-bold">Realtime</h3>
-            <p className="text-[30px] trial2 italic opacity-90">Content Updates...</p>
-            <div className="absolute bottom-4 right-0 space-y-2">
+            <h3 className="md:text-4xl text-2xl trial2 italic font-bold">Realtime</h3>
+            <p className="text-[20px] md:text-[30px] trial2 italic opacity-90">Content Updates...</p>
+            <div className="absolute bottom-4  right-0 space-y-2">
               <Image
                 src="/icons/gear2.svg"
                 alt="gear"
                 width={180}
-                height={200}
+                height={100}
               />
             </div>
           </div>
@@ -165,8 +176,8 @@ const Features = () => {
             ref={addCardRef}
             className="bg-[#44A479] p-8 text-white relative overflow-hidden"
           >
-            <h3 className="text-4xl trial2 italic font-bold">Multiple</h3>
-            <p className="text-3xl trial2  italic opacity-90">Integration...</p>
+            <h3 className="text-2xl md:text-4xl trial2 italic font-bold">Multiple</h3>
+            <p className="text-[20px] md:text-[30px] trial2  italic opacity-90">Integration...</p>
             <div className="absolute bottom-4 right-4 flex space-x-2">
               <div className="w-6 h-6 bg-white bg-opacity-30 rounded-full" />
               <div className="w-6 h-6 bg-white bg-opacity-20 rounded-full" />
@@ -178,8 +189,8 @@ const Features = () => {
             ref={addCardRef}
             className="bg-[#FFD05C] p-6 text-white relative overflow-hidden"
           >
-            <h3 className="text-4xl trial2 italic font-bold">Analytics</h3>
-            <p className="text-3xl trial2 italic ">& Engagement</p>
+            <h3 className="text-2xl md:text-4xl trial2 italic font-bold">Analytics</h3>
+            <p className="text-[20px] md:text-[30px] trial2 italic ">& Engagement</p>
             <div className="absolute bottom-4 right-4">
               <div className="flex items-end space-x-1">
                 <div className="w-2 h-6 bg-white bg-opacity-30 rounded-t" />

@@ -21,19 +21,19 @@ const FAQ = () => {
         "Abio.site is a link-in-bio tool that lets you create a beautiful profile to showcase your social, contact, business, and other information. We seamlessly combine this with an NFC-enabled card, called an Acard, that allows for one-tap sharing of your profile.",
     },
     {
-      question: "Do I need an app to use Abio?",
+      question: "How does the NFC card work? ",
       answer:
-        "No, Abio works directly in your browser. You can access and manage your bio link from any device without downloading an app.",
+        "The Acard is a contactless card that, when tapped on an NFC-enabled smartphone (both iOS and Android), instantly pulls up your personal link. This loads your dynamic Abio.site/yourname profile, where the person you're networking with can select and connect with your social media, portfolio, or other links",
     },
     {
-      question: "What is a linkinbio tool?",
+      question: "How will I be notified when Abio is ready?",
       answer:
-        "A linkinbio tool allows you to create a single link that houses multiple links, perfect for social media profiles where you can only add one clickable link.",
+        "You will receive an email notification as soon as Abio.site is launched and ready for you to sign up and get your Acard.",
     },
     {
-      question: "What kind of content can I put on my Abio profile?",
+      question: "Is there a cost associated with joining the waitlist?",
       answer:
-        "You can add links to your social media, websites, portfolios, products, videos, music, and any other online content you want to showcase.",
+        "No, joining the waitlist is completely free!",
     },
   ]
 
@@ -82,40 +82,51 @@ const FAQ = () => {
   }
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Title fade in
-      gsap.from(titleRef.current, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: "power3.out",
+  const ctx = gsap.context(() => {
+    // Title fade in (scroll both ways)
+    gsap.fromTo(
+      titleRef.current,
+      { opacity: 10, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
+          end: "top 40%", // controls scroll distance
+          scrub: true,    // active on scroll up & down
         },
-      })
+      }
+    )
 
-      // FAQ cards stagger
-      gsap.from(faqRefs.current, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
+    // FAQ cards stagger (scroll both ways)
+    gsap.fromTo(
+      faqRefs.current,
+      { opacity: 10, y: 40 },
+      {
+        opacity: 79,
+        y: 0,
+        ease: "none",
         stagger: 0.2,
-        ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 75%",
+          end: "top 35%",
+          scrub: true,
         },
-      })
+      }
+    )
 
-      // Initialize answers hidden
-      answerRefs.current.forEach((el) => {
-        gsap.set(el, { height: 0, opacity: 0 })
-      })
-    }, sectionRef)
+    // Initialize answers hidden
+    answerRefs.current.forEach((el) => {
+      gsap.set(el, { height: 0, opacity:0 })
+    })
+  }, sectionRef)
 
-    return () => ctx.revert()
-  }, [])
+  return () => ctx.revert()
+}, [])
+
 
   return (
     <section
@@ -150,14 +161,14 @@ const FAQ = () => {
                 <span className="font-semibold text-gray-800">
                   {faq.question}
                 </span>
-                <span className="text-2xl text-gray-600">
+                <span className="text-xl text-gray-600">
                   {openIndex === index ? "−" : "+"}
                 </span>
               </button>
 
               <div
                 ref={(el) => addToAnswerRefs(el, index)}
-                className="px-6 pb-4 text-gray-700 leading-relaxed overflow-hidden"
+                className="px-6 pb-4 text-gray-700 text-[12px] leading-relaxed overflow-hidden"
               >
                 {faq.answer}
               </div>
