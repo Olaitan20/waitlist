@@ -4,7 +4,7 @@ export default function UseCases() {
   const useCases = [
     {
       num: "01.",
-      title: "Professional Networking & Business",
+      title: "Professional Networkers & Business",
       bullets: [
         `Seamless Exchange: Sales or Web3 professionals can instantly share their full contact details, Twitter profile, LinkedIn profile with a single tap of their Acard on a client's phone at conferences or meetings.`,
         `Networking at Scale: At industry conferences, attendees can quickly exchange information without fumbling for paper business cards that often get lost or tossed.`,
