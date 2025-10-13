@@ -11,9 +11,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <Logo width={40} height={40} showText={true} textSize="text-xl" />
-      
+            <div className="flex items-center space-x-1">
+              <Logo width={30} height={30} />
+              <span className="font-bold text-white text-xl">bio.site</span>
             </div>
             {/* <p className="text-amber-100 mb-4 max-w-md">
               A.Bio is a free platform to use, but premium & it one page link 
