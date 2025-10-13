@@ -90,8 +90,11 @@ const Header = () => {
                 alt="Abio Logo"
                 width={120}
                 height={120}
-                className="cursor-pointer"
                 priority
+                className="cursor-pointer w-[90px] h-auto md:w-[120px] select-none"
+                style={{
+                  imageRendering: "crisp-edges", 
+                }}
               />
             </Link>
           </div>
