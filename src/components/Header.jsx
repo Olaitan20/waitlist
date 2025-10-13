@@ -119,13 +119,13 @@ const Header = () => {
         <div className="px-6 py-4 flex items-center justify-between">
           {/* Left: Logo + Nav */}
           <div className="flex items-center space-x-20">
-            <div className="flex items-center space-x-2">
-              <Logo width={40} height={40} />
-              <span className="font-bold text-black text-lg">A.Bio</span>
+            <div className="flex items-center space-x-1">
+              <Logo width={30} height={30} />
+              <span className="font-bold text-black text-xl">bio.site</span>
             </div>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center space-x-6">
+            {/* <nav className="hidden md:flex items-center space-x-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -136,55 +136,27 @@ const Header = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ))}
-            </nav>
+            </nav> */}
           </div>
 
           {/* Right: Button + Hamburger */}
           <div className="flex items-center space-x-4">
-            <button className="hidden md:block bg-red-500 text-white px-6 py-2 shadow-[4px_4px_0px_0px_#000000] hover:bg-red-600 hover:shadow-[2px_2px_0px_0px_#000000] transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px]">
+            {/* <button className="hidden md:block bg-red-500 text-white px-6 py-2 shadow-[4px_4px_0px_0px_#000000] hover:bg-red-600 hover:shadow-[2px_2px_0px_0px_#000000] transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px]">
               Join Waitlist
-            </button>
+            </button> */}
 
             {/* Hamburger */}
-            <button
-              className="md:hidden flex flex-col space-y-1 p-2 relative z-10"
-              onClick={() => setMenuOpen((prev) => !prev)}
+           <button
+              ref={addToMenuRefs}
+              className=" bg-red-500 text-white px-4 py-2 shadow-[4px_4px_0px_0px_#000000] hover:bg-red-600 hover:shadow-[2px_2px_0px_0px_#000000] transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] self-start"
+              onClick={handleLinkClick}
             >
-              <span ref={(el) => addToHamburgerRefs(el, 0)} className="w-6 h-0.5 bg-black origin-center"></span>
-              <span ref={(el) => addToHamburgerRefs(el, 1)} className="w-6 h-0.5 bg-black origin-center"></span>
-              <span ref={(el) => addToHamburgerRefs(el, 2)} className="w-6 h-0.5 bg-black origin-center"></span>
+               Waitlist
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu (always mounted, hidden with GSAP) */}
-        <div
-          ref={mobileMenuRef}
-          className="md:hidden bg-[#FED45C] border-t border-yellow-500 overflow-hidden"
-          style={{ height: 0, opacity: 0, pointerEvents: "none" }}
-        >
-          <nav className="flex flex-col space-y-4 p-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                ref={addToMenuRefs}
-                href={link.href}
-                className="text-black font-medium hover:text-red-600 transition-colors relative group"
-                onClick={handleLinkClick}
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
-            <button
-              ref={addToMenuRefs}
-              className="mt-4 bg-red-500 text-white px-6 py-2 shadow-[4px_4px_0px_0px_#000000] hover:bg-red-600 hover:shadow-[2px_2px_0px_0px_#000000] transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] self-start"
-              onClick={handleLinkClick}
-            >
-              Join Waitlist
-            </button>
-          </nav>
-        </div>
+       
       </div>
     </header>
   )

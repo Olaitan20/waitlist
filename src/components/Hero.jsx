@@ -94,7 +94,7 @@ const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden bg-gradient-to-br from-yellow-50 via-orange-50 to-pink-50"
+      className="relative -mb-24 md:min-h-screen overflow-hidden bg-gradient-to-br from-yellow-50 via-orange-50 to-pink-50"
     >
       {/* Decorative curved element (BIG Logo) */}
       <div ref={logoLeftRef} className="absolute -top-12 left-0">
@@ -108,26 +108,7 @@ const Hero = () => {
         />
       </div>
 
-      <div ref={logoRightRef} className="absolute hidden md:block bottom-10 right-0">
-        <Image
-          src="/icons/Vector1.svg"
-          alt="A logo"
-          width={500}
-          height={500}
-          className="w-[300px] h-[300px]"
-          priority
-        />
-      </div>
-      <div  className="absolute  md:hidden  bottom-10 left-0 right-0 w-full">
-        <Image
-          src="/icons/Vector3.svg"
-          alt="A logo"
-          width={500}
-          height={500}
-          className="w-[500px] h-[220px]"
-          priority
-        />
-      </div>
+     
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center mt-8 justify-center min-h-[90vh] md:min-h-[100vh] px-6 text-center">
@@ -142,7 +123,7 @@ const Hero = () => {
             <div className="relative inline-block">
             <h2
                 ref={subtitleRef}
-                className="text-5xl md:text-5xl trial font-light italic text-[#5D2D2B] mb-4"
+                className="text-5xl md:text-5xl trial2 font-light italic text-[#5D2D2B] mb-4"
             >
                 Of Networking is Coming.
             </h2>
@@ -157,9 +138,9 @@ const Hero = () => {
           <p
             ref={paragraphRef}
             className="text-[11px] md:text-[14px] text-center font-thin text-[#5D2D2B] mt-4 mb-6 max-w-xl mx-auto"
-          >Join a new world where link-in-bio tool meets NFC, abio.site is link-in bio tool 
-            that lets you showcase your social, contact links all shared seamlessly 
-            with Acard.
+          >TIred of juggling multiple links and hoping someone types your name correctly? Abio.site
+          is a new platform that combines the power of a link-in-bio tool with
+          NFC tech for seamless/instant sharing.
           </p>
 
           {/* Waitlist Form */}
@@ -183,12 +164,7 @@ const Hero = () => {
               Waitlist
             </button>
           </form>
-           <p
-            ref={paragraphRef}
-            className="text-[10px] md:text-[13px] text-center mt-2  font-thin text-[#5D2D2B] mb-8 max-w-lg mx-auto"
-          >Be the first to know when we launch. Join the waitlist 
-            and get exclusive early access.
-          </p>
+         
         </div>
       </div>
     </section>

@@ -14,6 +14,7 @@ import Hero from "@/components/Hero";
 import Feature from "@/components/Feature";
 import Faq from "@/components/Faq";
 import Waitlist from "@/components/Waitlist";
+import UseCases from "@/components/UseCases";
 
 export default function Home() {
   const cloudTopLeftRef = useRef(null);
@@ -107,6 +108,7 @@ export default function Home() {
       <Hero />
       <Feature />
       <Faq />
+      <UseCases/>
       <Waitlist />
       <Footer />
     </section>
