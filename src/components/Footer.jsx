@@ -1,28 +1,30 @@
 // components/Footer.js
 import Link from 'next/link';
+import Image from 'next/image';
 import Logo from './shared/Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#331400]  text-white py-16">
+    <footer className="bg-[#331400]  text-white py-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-1">
-              <Logo width={30} height={30} />
-              <span className="font-bold text-white text-xl">bio.site</span>
+              <Link href="/">
+              <Image
+                src="/icons/logo2.svg"
+                alt="Abio Logo"
+                width={120}
+                height={120}
+                className="cursor-pointer"
+                priority
+              />
+            </Link>
             </div>
-            {/* <p className="text-amber-100 mb-4 max-w-md">
-              A.Bio is a free platform to use, but premium & it one page link 
-              gives you audience efficiently, and track results.
-            </p>
-            <p className="text-amber-100">
-              to boost your business at front levels
-              your social media game.
-            </p> */}
+            
           </div>
           
           {/* Product Links */}
@@ -65,7 +67,7 @@ const Footer = () => {
         </div>
         
         {/* Bottom Section */}
-        <div className="border-t border-amber-800 pt-8">
+        <div className="border-t border-[#FED45C] pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-white text-sm mb-4 md:mb-0">
               © {currentYear} A.Bio site. One Link Endless Connections

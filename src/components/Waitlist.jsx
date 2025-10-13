@@ -63,7 +63,7 @@ const Waitlist = () => {
   const steps = [
     { icon: "📝", title: "Join Waitlist", description: "Sign up with your email" },
     { icon: "🔔", title: "Get Notified", description: "We'll let you know we launch" },
-    { icon: "🚀", title: "Start Connecting", description: "Join A.bio and connect seamlessly" },
+    { icon: "🚀", title: "Start Connecting", description: "Join 🅰bio.site and connect seamlessly" },
   ];
 
   const addToStepsRefs = (el) => {
@@ -111,7 +111,7 @@ const Waitlist = () => {
         </h2>
 
         <p className="text-[14px] md:text-[15px]">Showcase your links, get closer to your audience faster.</p>
-        <p className="text-[14px] md:text-[15px] mb-4">All possible with Abio.site</p>
+        <p className="text-[14px] md:text-[15px] mb-4">All possible with 🅰bio.site</p>
         
         {/* Statistics */}
         <div className="grid grid-cols-1 bg-[#FFDCE3] md:grid-cols-3 gap-8 mb-12">
@@ -153,7 +153,7 @@ const Waitlist = () => {
           </button>
         </form>
 
-        <p className="text-[15px] mb-10">We'll only use your email to notify you when A.bio launches</p>
+        <p className="text-[15px] mb-10">We'll only use your email to notify you when 🅰bio.site launches</p>
 
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
