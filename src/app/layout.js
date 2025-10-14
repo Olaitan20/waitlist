@@ -51,6 +51,9 @@ const monumentExtended = localFont ({
 export const metadata = {
   title: "Abio",
   description: "Link in bio",
+  icons: {
+    icon: "/icons/vercel.svg", 
+  },
 };
 
 export default function RootLayout({ children }) {

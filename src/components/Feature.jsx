@@ -99,7 +99,7 @@ const Features = () => {
           <div className="relative mt-10 md:mt-0 mb-6 md:mb-10 inline-block">
             <h2
               ref={titleRef}
-              className="text-6xl md:text-6xl trial2 font-light italic text-[#5D2D2B] mb-4"
+              className="text-5xl md:text-6xl trial2 font-light italic text-[#5D2D2B] mb-4"
             >
               What is Abio.site?
             </h2>

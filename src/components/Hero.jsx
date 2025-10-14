@@ -137,7 +137,7 @@ const Hero = () => {
             </div>
           <p
             ref={paragraphRef}
-            className="text-[11px] md:text-[14px] text-center font-thin text-[#5D2D2B] mt-4 mb-6 max-w-xl mx-auto"
+            className="text-[15px]  text-center font-thin text-[#5D2D2B] mt-4 mb-6 max-w-xl mx-auto"
           >TIred of juggling multiple links and hoping someone types your name correctly? Abio.site
           is a new platform that combines the power of a link-in-bio tool with
           NFC tech for seamless/instant sharing.

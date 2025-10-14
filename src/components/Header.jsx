@@ -72,7 +72,13 @@ const Header = () => {
     }
   }, [menuOpen])
 
-  const handleLinkClick = () => setMenuOpen(false)
+  const handleLinkClick = () => {
+  const section = document.getElementById("waitlist");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 
   useEffect(() => {
     if (!menuOpen) menuItemsRef.current = []
