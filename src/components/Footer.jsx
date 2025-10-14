@@ -54,7 +54,7 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex space-x-4 text-lg">
               <a
-                href="https://www.instagram.com/yourhandle"
+                href="https://www.instagram.com/abio.site?igsh=MXhjYmtvOWlvbXBpeg%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-amber-800 p-2  hover:bg-[#E4405F] transition-all"
@@ -62,7 +62,7 @@ const Footer = () => {
                 <FaInstagram />
               </a>
               <a
-                href="https://www.tiktok.com/@yourhandle"
+                href="https://www.tiktok.com/@abio.site?_t=ZS-90XaM2rHhp4&_r=1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-amber-800 p-2  hover:bg-black transition-all"
@@ -70,7 +70,7 @@ const Footer = () => {
                 <FaTiktok />
               </a>
               <a
-                href="https://www.pinterest.com/yourhandle"
+                href="https://pin.it/4rk3x7b28"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-amber-800 p-2  hover:bg-[#E60023] transition-all"
@@ -78,7 +78,7 @@ const Footer = () => {
                 <FaPinterest />
               </a>
               <a
-                href="https://twitter.com/yourhandle"
+                href="https://x.com/abioprofile?s=21"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-amber-800 p-2  hover:bg-[#1DA1F2] transition-all"
