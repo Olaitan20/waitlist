@@ -72,10 +72,16 @@ const Header = () => {
     }
   }, [menuOpen])
 
-  const handleLinkClick = () => {
-  const section = document.getElementById("waitlist");
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
+ const handleLinkClick = () => {
+  const form = document.getElementById("waitlist2");
+  if (form) {
+    form.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    // Optionally focus the input field so it's "activated"
+    const input = form.querySelector("input[type='email']");
+    if (input) {
+      setTimeout(() => input.focus(), 600); // small delay to let scroll finish
+    }
   }
 };
 
@@ -107,7 +113,7 @@ const Header = () => {
 
           {/* Right: Waitlist Button */}
           <div className="flex items-center space-x-4">
-            <button
+          <button
               ref={addToMenuRefs}
               className="bg-red-500 text-white px-4 py-2 shadow-[4px_4px_0px_0px_#000000] hover:bg-red-600 hover:shadow-[2px_2px_0px_0px_#000000] transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] self-start"
               onClick={handleLinkClick}

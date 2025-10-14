@@ -136,7 +136,7 @@ const Waitlist = () => {
         </div>
 
         {/* Email signup */}
-        <form onSubmit={handleSubmit} className="relative w-full mb-4 max-w-md mx-auto">
+        <form onSubmit={handleSubmit} id="waitlist2" className="relative w-full mb-4 max-w-md mx-auto">
           <input
             type="email"
             value={email}
