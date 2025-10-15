@@ -96,19 +96,20 @@ const Header = () => {
         <div className="px-6 py-4 flex items-center justify-between">
           {/* Left: Logo */}
           <div className="flex items-center space-x-20">
-            <Link href="/">
-              <Image
-                src="/icons/logo.svg"
-                alt="Abio Logo"
-                width={120}
-                height={120}
-                priority
-                className="cursor-pointer w-[90px] h-auto md:w-[120px] select-none"
-                style={{
-                  imageRendering: "crisp-edges", 
-                }}
-              />
-            </Link>
+           <Link href="/" className="flex items-end group">
+            <Image
+              src="/icons/A.Bio.png"
+              alt="A.Bio Logo"
+              width={30}
+              height={30}
+              priority
+              className="cursor-pointer select-none transition-transform group-hover:scale-105"
+            />
+            <span className="font-bold text-xl md:text-2xl text-black tracking-wide transition-colors">
+              bio.site
+            </span>
+          </Link>
+
           </div>
 
           {/* Right: Waitlist Button */}

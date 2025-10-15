@@ -112,7 +112,7 @@ const Hero = () => {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center mt-8 justify-center min-h-[90vh] md:min-h-[100vh] px-6 text-center">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <h1
             ref={titleRef}
             className="text-[40px] md:text-7xl trialheader  text-[#5D2D2B] -mb-2"
@@ -123,16 +123,16 @@ const Hero = () => {
             <div className="relative inline-block">
             <h2
                 ref={subtitleRef}
-                className="text-5xl md:text-5xl trial2 font-light italic text-[#5D2D2B] mb-4"
+                className="text-5xl md:text-8xl trial2 font-light italic text-[#5D2D2B] mb-4"
             >
-                Of Networking is Coming.
+                Of Networking is Coming!!!
             </h2>
             <Image
                 src="/icons/scribble.svg"
                 alt="Text underline decoration"
-                width={200}
-                height={200}
-                className="absolute left-1/2 md:left-100 -translate-x-1/2 top-full mt-[-0.5rem] w-[150px] h-auto"
+                width={300}
+                height={300}
+                className="absolute left-1/2 md:left-90 -translate-x-1/2 top-full mt-[-0.5rem] w-[150px] h-auto"
             />
             </div>
           <p
