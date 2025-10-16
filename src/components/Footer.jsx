@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FaInstagram, FaTiktok, FaPinterest, FaTwitter } from "react-icons/fa";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,13 +13,22 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
           <div className="md:col-span-2">
-            <Link href="/" className="inline-block">
-              <img
-                src="/icons/logo2.svg"
-                alt="Abio Logo"
-                className="cursor-pointer w-28 md:w-32"
-              />
-            </Link>
+            <div className="flex items-center">
+           <Link href="/" className="flex items-center gap-1 group">
+            <Image
+              src="/icons/A.Bio.png"
+              alt="A.Bio Logo"
+              width={28}
+              height={28}
+              priority
+              className="cursor-pointer select-none transition-transform group-hover:scale-105"
+            />
+            <span className="font-bold text-xl md:text-2xl text-white tracking-wide ">
+              bio.site
+            </span>
+          </Link>
+
+          </div>
           </div>
 
           {/* Product Links */}

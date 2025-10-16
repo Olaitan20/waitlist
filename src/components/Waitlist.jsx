@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { postFetch } from "@/lib/fetcher";
+import toast, { Toaster } from "react-hot-toast";
 import Logo from "./shared/Logo";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -51,14 +53,36 @@ const Counter = ({ target, duration = 2000, suffix = "" }) => {
 
 const Waitlist = () => {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
   const sectionRef = useRef(null);
   const stepsRef = useRef([]);
   stepsRef.current = [];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Waitlist email submitted:", email);
-  };
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!email.trim()) {
+    return toast.error("Please enter a valid email address.");
+  }
+
+  setLoading(true);
+  try {
+    const result = await postFetch("/waitlist", { email });
+
+    if (typeof result === "string") {
+      // if fetcher returned a message instead of data
+      return toast.error(result);
+    }
+
+    toast.success("You’ve been added to the waitlist 🎉");
+    console.log("✅ Response:", result);
+    setEmail("");
+  } catch (error) {
+    toast.error("Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   const steps = [
     { icon: "📝", title: "Join Waitlist", description: "Sign up with your email" },
@@ -105,6 +129,26 @@ const Waitlist = () => {
 
   return (
     <section id="waitlist" ref={sectionRef} className="py-16">
+      {/* Toast notifications */}
+      <Toaster
+        toastOptions={{
+          style: {
+            background: "#333",
+            color: "#fff",
+            fontSize: "10px",
+          },
+          success: {
+            style: {
+              background: "#22c55e",
+            },
+          },
+          error: {
+            style: {
+              background: "#ef4444",
+            },
+          },
+        }}
+      />
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-[40px] trial2 md:text-5xl trial font-semibold text-[#5D2D2B] mb-2 md:mb-4 italic">
           Join our Waitlist
@@ -146,11 +190,14 @@ const Waitlist = () => {
             required
           />
           <button
-            type="submit"
-            className="absolute top-1/2 right-2 -translate-y-1/2 bg-[#FED45C] shadow-[2px_2px_0px_0px_#000000] text-[#FF0000] px-4 py-2 font-semibold "
-          >
-            Waitlist
-          </button>
+              type="submit"
+              disabled={loading}
+              className={`absolute top-1/2 right-2 -translate-y-1/2 bg-[#FED45C] shadow-[2px_2px_0px_0px_#000000] text-[#FF0000] px-4 py-2 font-semibold transition-opacity ${
+                loading ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"
+              }`}
+            >
+              {loading ? "Joining..." : "Waitlist"}
+            </button>
         </form>
 
         <p className="text-[15px] mb-10">We'll only use your email to notify you when 🅰bio.site launches</p>
