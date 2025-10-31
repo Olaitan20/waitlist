@@ -1,6 +1,6 @@
 {
     "$schema": "https://openapi.vercel.sh/vercel.json",
-    "redirects": [
-        { "source": "/dnabygaza", "destination": "https://template-kappa-six.vercel.app/dnabygaza", "permanent": false }
+    "rewrites": [
+        { "source": "/dnabygaza", "destination": "https://template-kappa-six.vercel.app/dnabygaza" }
     ]
 }
