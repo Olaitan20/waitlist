@@ -4,17 +4,17 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Head from "next/head";
-import Form from "@/components/Form";
-import Services from "@/components/Services";
+// import Form from "@/components/Form";
+import Services from "../components/Services";
 import Image from "next/image";
-import Footer from "@/components/Footer";
-import Logo from "@/components/shared/Logo";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Feature from "@/components/Feature";
-import Faq from "@/components/Faq";
-import Waitlist from "@/components/Waitlist";
-import UseCases from "@/components/UseCases";
+import Footer from "../components/Footer";
+import Logo from "../components/shared/Logo";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Feature from "../components/Feature";
+import Faq from "../components/Faq";
+import Waitlist from "../components/Waitlist";
+import UseCases from "../components/UseCases";
 
 export default function Home() {
   const cloudTopLeftRef = useRef(null);

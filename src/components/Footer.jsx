@@ -47,8 +47,8 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-[#FED45C] pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white text-sm mb-4 md:mb-0">
-              © {currentYear} A.Bio site. One Link Endless Connections
+            <p className="text-white font-semibold text-sm mb-4 md:mb-0">
+              © {currentYear} abio.site One Link Endless Connections
             </p>
 
             {/* Social Icons */}
@@ -57,7 +57,7 @@ const Footer = () => {
                 href="https://www.instagram.com/abio.site?igsh=MXhjYmtvOWlvbXBpeg%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-amber-800 p-2  hover:bg-[#E4405F] transition-all"
+                className="border-1 border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2  transition-all"
               >
                 <FaInstagram />
               </a>
@@ -65,7 +65,7 @@ const Footer = () => {
                 href="https://www.tiktok.com/@abio.site?_t=ZS-90XaM2rHhp4&_r=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-amber-800 p-2  hover:bg-black transition-all"
+                className="border-1 border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2 transition-all"
               >
                 <FaTiktok />
               </a>
@@ -73,7 +73,7 @@ const Footer = () => {
                 href="https://pin.it/4rk3x7b28"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-amber-800 p-2  hover:bg-[#E60023] transition-all"
+                className="border-1 border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2 transition-all"
               >
                 <FaPinterest />
               </a>
@@ -81,7 +81,7 @@ const Footer = () => {
                 href="https://x.com/abioprofile?s=21"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-amber-800 p-2  hover:bg-[#1DA1F2] transition-all"
+                className="border-1 border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2 transition-all"
               >
                 <FaTwitter />
               </a>

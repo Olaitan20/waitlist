@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { postFetch } from "@/lib/fetcher";
+import { postFetch } from "../lib/fetcher";
 import toast, { Toaster } from "react-hot-toast";
 
 gsap.registerPlugin(ScrollTrigger);
