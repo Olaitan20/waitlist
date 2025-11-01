@@ -35,13 +35,13 @@ export default function DnaFormV1() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Full Name"
-          className="w-full p-3 bg-white/10 border border-white/20 text-sm placeholder-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-[#FF0000] "
+          className="w-full p-3 bg-white/10 border border-white/70 text-sm placeholder-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-[#FF0000] "
           required
         />
 
         {/* Phone number (optional) */}
         <div className="text-left">
-          <label className="text-xs text-gray-200 mb-1 block">
+          <label className="text-xs text-white mb-1 block">
             Phone Number (optional)
           </label>
           <input
@@ -49,7 +49,7 @@ export default function DnaFormV1() {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="+234 801 234 5678"
-            className="w-full p-3 bg-white/10 border border-white/20 text-sm placeholder-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-[#FF0000] "
+            className="w-full p-3 bg-white/10 border border-white/70 text-sm placeholder-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-[#FF0000] "
           />
         </div>
 

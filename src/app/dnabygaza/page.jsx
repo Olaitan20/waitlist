@@ -10,8 +10,9 @@ import DnaFormV1 from '../../components/dnabygaza/DnaFormV1.jsx'
 import AccordionV2 from '../../components/dnabygaza/AccordionV2.jsx'
 import { MENU } from '../data/index.jsx'
 
-export default function Home() {
-  const [tab, setTab] = useState('links')
+export default function Home({ defaultTab = 'links' }) {
+  const [tab, setTab] = useState(defaultTab)
+  const [openIndex, setOpenIndex] = useState(null)
 
   return (
     <main className="bg-black min-h-screen w-full overflow-x-hidden">
@@ -49,8 +50,16 @@ export default function Home() {
               <LinkListV1 />
             ) : (
               <div className="space-y-4">
-                {Object.entries(MENU).map(([k, v]) => (
-                  <AccordionV2 key={k} title={k} items={v} />
+                {Object.entries(MENU).map(([title, items], index) => (
+                  <AccordionV2
+                    key={title}
+                    title={title}
+                    items={items}
+                    isOpen={openIndex === index}
+                    onToggle={() =>
+                      setOpenIndex(openIndex === index ? null : index)
+                    }
+                  />
                 ))}
               </div>
             )}

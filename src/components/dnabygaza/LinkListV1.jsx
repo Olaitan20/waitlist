@@ -14,12 +14,12 @@ export default function LinkListV1() {
       href: 'https://www.instagram.com/clubdnalagos',
     },
     {
-      label: 'WhatsApp',
+      label: 'Reservation',
       icon: <FaWhatsapp size={22} color="#25D366" />, // WhatsApp green
       href: 'https://wa.link/k7egap',
     },
     {
-      label: 'Add On Snapchat',
+      label: 'Add Us On Snapchat',
       icon: <FaSnapchatGhost size={22} color="#FFFC00" />, // Snapchat yellow
       href: 'https://snapchat.com/t/finKlDlh',
     },
