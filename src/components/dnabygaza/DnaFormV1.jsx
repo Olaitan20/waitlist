@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 export default function DnaFormV1() {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
-  const [status, setStatus] = useState('idle') // removed TypeScript type annotation
+  const [status, setStatus] = useState('idle') 
 
   async function submit(e) {
     e.preventDefault()
@@ -24,7 +24,7 @@ export default function DnaFormV1() {
     <div className="relative">
       <form
         onSubmit={submit}
-        className="p-6 bg-white/30 backdrop-blur-md space-y-4 text-center border border-white/10 rounded-xl"
+        className="p-6 bg-white/30 backdrop-blur-md space-y-4 text-center border border-white/10"
       >
         <h2 className="text-lg font-semibold text-white tracking-wide">
           DNA Checkup
@@ -35,7 +35,7 @@ export default function DnaFormV1() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Full Name"
-          className="w-full p-3 bg-white/10 border border-white/20 text-sm placeholder-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-[#FF0000] rounded-md"
+          className="w-full p-3 bg-white/10 border border-white/20 text-sm placeholder-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-[#FF0000] "
           required
         />
 
@@ -49,20 +49,20 @@ export default function DnaFormV1() {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="+234 801 234 5678"
-            className="w-full p-3 bg-white/10 border border-white/20 text-sm placeholder-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-[#FF0000] rounded-md"
+            className="w-full p-3 bg-white/10 border border-white/20 text-sm placeholder-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-[#FF0000] "
           />
         </div>
 
         <button
           type="submit"
-          className="w-full p-3 bg-white text-black font-semibold rounded-md transition active:scale-[0.98]"
+          className="w-full p-3 bg-white text-black font-semibold  transition active:scale-[0.98]"
         >
           Submit
         </button>
 
         {status === 'ok' && (
           <p className="text-green-300 text-xs animate-pulse mt-2">
-            ✅ Thanks — we received it!
+            Thanks, we received it!
           </p>
         )}
         {status === 'err' && (

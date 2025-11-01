@@ -1,6 +1,6 @@
 import Image from "next/image"
 import React from "react"
-// import profilePic from "../public/logo.png"
+import profilePic from "../../../public/logo.png"
 
 export default function HeaderV1() {
   return (
@@ -8,14 +8,14 @@ export default function HeaderV1() {
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           {/* ✅ Profile image */}
-          {/* <Image
+          <Image
             src={profilePic}
             alt="DNA by Gaza profile"
             width={80}
             height={80}
             className="rounded-full object-cover"
             priority
-          /> */}
+          />
 
           <div>
             <div className="text-[20px] leading-tight text-black font-bold">

@@ -38,7 +38,7 @@ export default function Home() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 py-6 max-w-md mx-auto">
+          <div className="relative z-10 w-full px-6 py-6 max-w-md mx-auto">
             {tab === 'links' && (
               <div className="mb-6">
                 <DnaFormV1 />
