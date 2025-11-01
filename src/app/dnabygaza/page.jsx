@@ -67,15 +67,15 @@ export default function Home({ defaultTab = 'links' }) {
         </div>
 
         {/* Footer */}
-<div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center justify-center text-white/80 text-[10px] mt-2">
+<div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center font-semibold justify-center text-white/80 text-[12px] mt-2">
   <div className="flex items-center gap-1">
     <span>Powered by</span>
     <span className="flex items-center font-semibold text-white gap-1">
       <Image
         src="/icons/A.Bio.png"
         alt="Aorbyte logo"
-        width={16}
-        height={16}
+        width={18}
+        height={18}
         className="object-contain"
       />
       Orbyte
