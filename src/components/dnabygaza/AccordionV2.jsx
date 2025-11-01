@@ -6,14 +6,14 @@ export default function AccordionV2({ title, items, isOpen, onToggle }) {
   const height = ref.current?.scrollHeight || 0
 
   return (
-    <div className="overflow-hidden border border-white/10 mb-4 backdrop-blur-sm">
+    <div className="overflow-hidden border border-white/10  backdrop-blur-sm">
       {/* Header */}
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
         className="w-full flex justify-between items-center px-4 py-2 bg-white/30 transition-all duration-300"
       >
-        <span className="text-[14px] font-semibolduppercase text-white">
+        <span className="text-[13px] font-semibold uppercase text-white">
           {title}
         </span>
         <svg
@@ -38,7 +38,7 @@ export default function AccordionV2({ title, items, isOpen, onToggle }) {
               key={i}
               className="flex justify-between items-center px-4 py-3 transition-all"
             >
-              <span className="text-sm text-white">{item.name}</span>
+              <span className="text-[13px] font-semibold text-white">{item.name}</span>
               <span className="text-[#FFD700] font-semibold text-sm">
                 {item.price}
               </span>

@@ -49,7 +49,7 @@ export default function Home({ defaultTab = 'links' }) {
             {tab === 'links' ? (
               <LinkListV1 />
             ) : (
-              <div className="space-y-4 pb-20">
+              <div className="space-y-4 pb-10">
                 {Object.entries(MENU).map(([title, items], index) => (
                   <AccordionV2
                     key={title}

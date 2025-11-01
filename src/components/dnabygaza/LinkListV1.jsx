@@ -33,7 +33,7 @@ export default function LinkListV1() {
           href={it.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 bg-[#FFFFFF]/30 text-white px-4 py-3 font-medium shadow-md active:scale-[0.98] transition-transform duration-150"
+          className="flex items-center text-[13px] gap-3 bg-[#FFFFFF]/30 text-white px-4 py-3 font-semibold shadow-md active:scale-[0.98] transition-transform duration-150"
         >
           <div className="flex-shrink-0">{it.icon}</div>
           <span className="truncate">{it.label}</span>
