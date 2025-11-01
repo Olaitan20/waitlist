@@ -4,29 +4,29 @@ import profilePic from "../../../public/logo.png"
 
 export default function HeaderV1() {
   return (
-    <section className="px-4 py-4 bg-white space-y-4">
+    <section className="px-4 py-4 bg-white space-y-2">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           {/* ✅ Profile image */}
           <Image
             src={profilePic}
             alt="DNA by Gaza profile"
-            width={80}
-            height={80}
+            width={70}
+            height={70}
             className="rounded-full object-cover"
             priority
           />
 
           <div>
-            <div className="text-[20px] leading-tight text-black font-bold">
+            <div className="text-[18px] leading-tight text-black font-bold">
               DNA BY GAZA
             </div>
-            <div className="text-[14px] text-gray-500">@dnabygaza</div>
+            <div className="text-[13px] font-thin text-gray-500">@dnabygaza</div>
           </div>
         </div>
       </header>
 
-      <p className="text-[13px] font-medium text-black leading-none">
+      <p className="text-[10px] font-medium text-black leading-1">
         Club Dna By Gaza- Where the music is always good and <br /> champagne is always cold.
       </p>
 

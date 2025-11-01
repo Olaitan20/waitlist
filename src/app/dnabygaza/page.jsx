@@ -17,17 +17,17 @@ export default function Home({ defaultTab = 'links' }) {
   return (
     <main className="bg-black min-h-screen w-full overflow-x-hidden">
       <Frame>
-        {/* Header + Tabs */}
-        <div className="bg-white sticky top-0 z-20">
-          <HeaderV1 />
-          <div>
-            <TabsV1 value={tab} onChange={setTab} />
-          </div>
+        {/* Header (scrolls away) */}
+        <HeaderV1 />
+
+        {/* Tabs sticky to viewport top */}
+        <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-md">
+          <TabsV1 value={tab} onChange={setTab} />
         </div>
 
-        {/* Main content area */}
-        <div className="relative w-full min-h-[75vh] overflow-hidden">
-          {/* Background Image */}
+        {/* Content container - no overflow on this ancestor so sticky works */}
+        <div className="relative w-full">
+          {/* Background expands with content */}
           <div className="absolute inset-0 z-0">
             <Image
               src="/Rectangle 39.png"
@@ -38,7 +38,7 @@ export default function Home({ defaultTab = 'links' }) {
             />
           </div>
 
-          {/* Content */}
+          {/* Foreground content (grows as accordions expand) */}
           <div className="relative z-10 w-full px-6 py-6 max-w-md mx-auto">
             {tab === 'links' && (
               <div className="mb-6">
@@ -49,7 +49,7 @@ export default function Home({ defaultTab = 'links' }) {
             {tab === 'links' ? (
               <LinkListV1 />
             ) : (
-              <div className="space-y-4">
+              <div className="space-y-4 pb-20">
                 {Object.entries(MENU).map(([title, items], index) => (
                   <AccordionV2
                     key={title}
@@ -69,3 +69,5 @@ export default function Home({ defaultTab = 'links' }) {
     </main>
   )
 }
+
+
