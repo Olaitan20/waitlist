@@ -26,7 +26,7 @@ export default function HeaderV1() {
         </div>
       </header>
 
-      <p className="text-[10px] font-medium text-black leading-1">
+      <p className="text-[10px] font-medium text-black leading-none">
         Club Dna By Gaza- Where the music is always good and <br /> champagne is always cold.
       </p>
 
