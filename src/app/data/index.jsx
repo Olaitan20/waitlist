@@ -213,7 +213,7 @@ export const MENU = {
     { name: "Ciroc", price: "₦350,000" },
   ],
 
-  "VINTAGE CHAMPAGNES": [
+  "VINTAGE BLANCE CHAMPAIGNES": [
     { name: "Don Perignon Rosé", price: "₦1,700,000" },
     { name: "Don Perignon Brut", price: "₦1,300,000" },
     { name: "Cristal Brut 75CL", price: "₦1,300,000" },
@@ -224,7 +224,7 @@ export const MENU = {
     { name: "Ace of Spade Rosé", price: "₦1,700,000" },
   ],
 
-  "NON-VINTAGE CHAMPAGNE": [
+  "NON VINATGE BLANCE CHAMPAGNE": [
     { name: "GH Mumm Brut", price: "₦235,000" },
     { name: "GH Mumm Demi-Sec", price: "₦280,000" },
     { name: "Moet Brut", price: "₦280,000" },
@@ -267,5 +267,19 @@ export const MENU = {
     { name: "Apple Juice", price: "₦20,000" },
     { name: "Small Voss/Fiji Water", price: "₦7,000" },
     { name: "Big Voss/Fiji Water", price: "₦12,000" },
+  ],
+
+  "ENERGY DRINKS": [
+    { name: "Red Bull", price: "₦6,000" },
+  ],
+  "GIN": [
+    { name: "Monkey47", price: "₦200,000" },
+    { name: "Gin Mare", price: "₦200,000" },
+    { name: "Hendrick", price: "₦250,000" },
+  ],
+  "OTHERS": [
+    { name: "Cocktail", price: "₦25,000" },
+    { name: "Wine", price: "₦160,000" },
+    { name: "Small Vape", price: "₦120,000" },
   ],
 }

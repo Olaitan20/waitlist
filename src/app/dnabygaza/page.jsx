@@ -15,7 +15,7 @@ export default function Home({ defaultTab = 'links' }) {
   const [openIndex, setOpenIndex] = useState(null)
 
   return (
-    <main className="bg-black min-h-screen w-full overflow-x-hidden">
+    <main className="bg-black min-h-screen w-full overflow-x-hidden relative">
       <Frame>
         {/* Header (scrolls away) */}
         <HeaderV1 />
@@ -25,8 +25,8 @@ export default function Home({ defaultTab = 'links' }) {
           <TabsV1 value={tab} onChange={setTab} />
         </div>
 
-        {/* Content container - no overflow on this ancestor so sticky works */}
-        <div className="relative w-full">
+        {/* Content container */}
+        <div className="relative w-full pb-4">
           {/* Background expands with content */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -38,8 +38,8 @@ export default function Home({ defaultTab = 'links' }) {
             />
           </div>
 
-          {/* Foreground content (grows as accordions expand) */}
-          <div className="relative z-10 w-full px-6 py-6 max-w-md mx-auto">
+          {/* Foreground content */}
+          <div className="relative z-10 w-full px-4 py-6 max-w-md mx-auto">
             {tab === 'links' && (
               <div className="mb-6">
                 <DnaFormV1 />
@@ -65,9 +65,28 @@ export default function Home({ defaultTab = 'links' }) {
             )}
           </div>
         </div>
+
+        {/* Footer */}
+<div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center justify-center text-white/80 text-[10px] mt-2">
+  <div className="flex items-center gap-1">
+    <span>Powered by</span>
+    <span className="flex items-center font-semibold text-white gap-1">
+      <Image
+        src="/icons/A.Bio.png"
+        alt="Aorbyte logo"
+        width={16}
+        height={16}
+        className="object-contain"
+      />
+      Orbyte
+    </span>
+  </div>
+</div>
+
       </Frame>
     </main>
   )
 }
+
 
 
