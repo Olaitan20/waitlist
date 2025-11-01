@@ -58,13 +58,13 @@ export default function DnaFormV1() {
         {/* Phone number (optional) */}
         <div className="text-left">
           <label className="text-xs text-white mb-1 block">
-            Phone Number (optional)
+            Phone Number 
           </label>
           <input
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            placeholder="+234 000 000 0000"
+            placeholder="+234"
             className="w-full p-3 bg-white/10 border border-white/70 text-sm placeholder-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-[#FF0000]"
           />
         </div>
