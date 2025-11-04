@@ -119,7 +119,7 @@ const Features = () => {
               socials, contact info and portfolio all in one sleek page.
               <br />
               <br />
-              Pair it with 🅰card, our smart NFC card, to instantly share your
+              Pair it with Acard, our smart NFC card, to instantly share your
               🅰bio profile with a simple tap, loved by creators, entrepreneurs,
               Web3 professionals, and so many others.
             </p>

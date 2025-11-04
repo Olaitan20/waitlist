@@ -33,7 +33,7 @@ export default function FAQs() {
               </div>
             </div>
             <p className="mt-4 mb-8 md:mb-0 text-[14px] leading-relaxed max-w-xl">
-              When you sign up on abio.site you get  a unique link (🅰bio.site/yourname) and a personalized QR code that houses all your other links (contact, social, website and portfolio).
+              When you sign up on abio.site you get  a unique link (abio.site/yourname) and a personalized QR code that houses all your other links (contact, social, website and portfolio).
             </p>
           </div>
 
@@ -50,7 +50,7 @@ export default function FAQs() {
               </div>
             </div>
             <p className="mt-4 mb-8 md:mb-0  text-[14px] leading-relaxed max-w-xs">
-              Get your customizable 🅰card and other NFC enabled accessories (stickers, keyholders and more...) from our store when we launch 🅰store.
+              Get your customizable Acard and other NFC enabled accessories (stickers, keyholders and more...) from our store when we launch Astore.
             </p>
           </div>
 
