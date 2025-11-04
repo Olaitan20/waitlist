@@ -73,7 +73,7 @@
                   <FaPinterest />
                 </a>
                 <a
-                  href="https://x.com/abioprofile?s=21"
+                  href="https://x.com/abio_site?s=21"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2 hover:opacity-80 transition-all"
