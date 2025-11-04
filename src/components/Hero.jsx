@@ -208,7 +208,7 @@ const Hero = () => {
             className="text-[15px] text-center font-thin text-[#5D2D2B] mt-4 mb-6 max-w-xl mx-auto"
           >
             Tired of juggling multiple links and hoping someone types your name
-            correctly? 🅰bio.site is a new platform that combines the power of a
+            correctly? 🅰bio is a new platform that combines the power of a
             link-in-bio tool with NFC tech for seamless sharing.
           </p>
 
