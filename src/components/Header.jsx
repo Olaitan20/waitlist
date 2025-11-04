@@ -96,16 +96,16 @@ const Header = () => {
         <div className="px-6 py-4 flex items-center justify-between">
           {/* Left: Logo */}
           <div className="flex items-center space-x-20">
-           <Link href="/" className="flex items-end group">
+             <Link href="/" className="flex items-center gap-1 group">
             <Image
               src="/icons/A.Bio.png"
               alt="A.Bio Logo"
-              width={30}
-              height={30}
+              width={28}
+              height={28}
               priority
               className="cursor-pointer select-none transition-transform group-hover:scale-105"
             />
-            <span className="font-bold text-xl md:text-2xl text-black tracking-wide transition-colors">
+            <span className="font-bold text-xl md:text-2xl text-black tracking-wide ">
               bio.site
             </span>
           </Link>

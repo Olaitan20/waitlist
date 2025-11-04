@@ -2,12 +2,12 @@
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Logo from "./shared/Logo";
 import { postFetch } from "../lib/fetcher";
 import toast, { Toaster } from "react-hot-toast";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Counter Component
 const Counter = ({ target, duration = 2000, suffix = "" }) => {
   const [count, setCount] = useState(0);
   const counterRef = useRef(null);
@@ -52,8 +52,10 @@ const Counter = ({ target, duration = 2000, suffix = "" }) => {
 
 const Waitlist = () => {
   const [email, setEmail] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [loading, setLoading] = useState(false); // ✅ FIXED: added loading state
+  const [name, setName] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [waitlistCount, setWaitlistCount] = useState(1000); // 👈 Start from 1000
+
   const sectionRef = useRef(null);
   const stepsRef = useRef([]);
   stepsRef.current = [];
@@ -70,16 +72,17 @@ const Waitlist = () => {
     }
   };
 
+  // ✅ Increment count on success
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email.trim()) {
-      return toast.error("Please enter a valid email address.");
+    if (!email.trim() || !name.trim()) {
+      return toast.error("Please fill in all fields.");
     }
 
     setLoading(true);
     try {
-      const result = await postFetch("/waitlist", { email });
+      const result = await postFetch("/waitlist", { name, email });
 
       if (typeof result === "string") {
         return toast.error(result);
@@ -87,7 +90,12 @@ const Waitlist = () => {
 
       toast.success("You’ve been added to the waitlist 🎉");
       console.log("Response:", result);
+
+      // ✅ Increment count after successful join
+      setWaitlistCount((prev) => prev + 1);
+
       setEmail("");
+      setName("");
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
     } finally {
@@ -95,6 +103,7 @@ const Waitlist = () => {
     }
   };
 
+  // GSAP animation
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(sectionRef.current, {
@@ -138,66 +147,66 @@ const Waitlist = () => {
         <p className="text-[14px] md:text-[15px] mb-4">All possible with 🅰bio.site</p>
 
         {/* Statistics */}
-        <div className="grid grid-cols-1 bg-[#FFDCE3] md:grid-cols-3 gap-8 mb-12">
-          <div className="p-6">
-            <div className="text-3xl font-bold text-gray-800 mb-2">
-              <Counter target={1000} />
-            </div>
-            <div className="text-gray-600">People on Waitlist</div>
-          </div>
-          <div className="p-6">
-            <div className="text-3xl font-bold text-gray-800 mb-2">
-              <Counter target={200} />
-            </div>
-            <div className="text-gray-600">Joined Recently</div>
-          </div>
-          <div className="p-6">
-            <div className="text-3xl font-bold text-gray-800 mb-2">
-              <Counter target={49000} />
-            </div>
-            <div className="text-gray-600">to go</div>
-          </div>
-        </div>
+<div className="grid grid-cols-1 bg-[#FFDCE3] md:grid-cols-3 gap-8 mb-12">
+  <div className="p-6">
+    <div className="text-3xl font-bold text-gray-800 mb-2">
+      <Counter target={waitlistCount} />
+    </div>
+    <div className="text-gray-600">People on Waitlist</div>
+  </div>
+  <div className="p-6">
+    <div className="text-3xl font-bold text-gray-800 mb-2">
+      <Counter target={200} />
+    </div>
+    <div className="text-gray-600">Joined Recently</div>
+  </div>
+  <div className="p-6">
+    <div className="text-3xl font-bold text-gray-800 mb-2">
+      <Counter target={50000 - waitlistCount} />
+    </div>
+    <div className="text-gray-600">to go</div>
+  </div>
+</div>
+
 
         {/* Email signup */}
         <form
           onSubmit={handleSubmit}
           id="waitlist2"
-          className="w-full max-w-md mx-auto border-2 p-4 shadow-[3px_3px_0px_0px_#000000] flex flex-col gap-4"
+          className="w-full max-w-md mx-auto  flex flex-col gap-4"
         >
           {/* Full Name Input */}
-            <input
-              type="text"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              placeholder="Full name"
-              className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              required
-            />
+         <input
+            type="text"
+            value={name} 
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Full name"
+            className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            required
+          />
+          {/* Email Input */}
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            required
+          />
 
-            {/* Email Input */}
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-              className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              required
-            />
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={loading}
-              className={`bg-[#FED45C] shadow-[3px_3px_0px_0px_#000000] text-[#FF0000] px-4 py-3 font-semibold transition-opacity ${
-                loading ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"
-              }`}
-            >
-              {loading ? "Joining..." : "Waitlist"}
-            </button>
+          {/* Submit Button */}
+          <button
+            type="submit"
+            disabled={loading}
+            className={`bg-[#FED45C] shadow-[3px_3px_0px_0px_#000000] text-[#FF0000] px-4 py-3 font-semibold transition-opacity ${
+              loading ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"
+            }`}
+          >
+            {loading ? "Joining..." : "Join Waitlist"}
+          </button>
         </form>
 
-         <p className="text-[13px] my-4">
+        <p className="text-[13px] my-4">
           We Promise to protect your information and keep it confidential
         </p>
 
@@ -217,5 +226,6 @@ const Waitlist = () => {
 };
 
 export default Waitlist;
+
 
 

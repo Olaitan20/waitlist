@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FaInstagram, FaTiktok, FaPinterest, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
@@ -12,15 +13,19 @@ const Footer = () => {
         {/* Brand & Legal Section */}
 <div className="flex justify-between items-center gap-6 mb-6 w-full flex-nowrap">
   {/* Brand Section */}
-  <div className="flex items-center justify-start">
-    <Link href="/" className="inline-block">
-      <img
-        src="/icons/logo2.svg"
-        alt="Abio Logo"
-        className="cursor-pointer w-28 md:w-32"
-      />
-    </Link>
-  </div>
+    <Link href="/" className="flex items-center gap-1 group">
+            <Image
+              src="/icons/A.Bio.png"
+              alt="A.Bio Logo"
+              width={28}
+              height={28}
+              priority
+              className="cursor-pointer select-none transition-transform group-hover:scale-105"
+            />
+            <span className="font-bold text-xl md:text-2xl text-white tracking-wide ">
+              bio.site
+            </span>
+          </Link>
 
   {/* Legal Links */}
   <div className="flex justify-end">

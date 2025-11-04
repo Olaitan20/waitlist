@@ -11,8 +11,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [email, setEmail] = useState("");
-  const [fullName, setFullName] = useState("");
+  const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
+  const [waitlistCount, setWaitlistCount] = useState(1000);
 
   // Refs for GSAP
   const sectionRef = useRef(null);
@@ -50,32 +51,35 @@ const Hero = () => {
   //     setLoading(false);
   //   }
   // };
-  const handleSubmit = async (e) => {
-  e.preventDefault();
+ const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  if (!email.trim()) {
-    return toast.error("Please enter a valid email address.");
-  }
-
-  setLoading(true);
-  try {
-    const result = await postFetch("/waitlist", { email });
-
-    if (typeof result === "string") {
-      // if fetcher returned a message instead of data
-      return toast.error(result);
+    if (!email.trim() || !name.trim()) {
+      return toast.error("Please fill in all fields.");
     }
 
-    toast.success("You’ve been added to the waitlist 🎉");
-    console.log("✅ Response:", result);
-    setEmail("");
-  } catch (error) {
-    toast.error("Something went wrong. Please try again.");
-  } finally {
-    setLoading(false);
-  }
-};
+    setLoading(true);
+    try {
+      const result = await postFetch("/waitlist", { name, email });
 
+      if (typeof result === "string") {
+        return toast.error(result);
+      }
+
+      toast.success("You’ve been added to the waitlist 🎉");
+      console.log("Response:", result);
+
+      // ✅ Increment count after successful join
+      setWaitlistCount((prev) => prev + 1);
+
+      setEmail("");
+      setName("");
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // 🔹 GSAP animations
   useEffect(() => {
@@ -217,8 +221,8 @@ const Hero = () => {
             {/* Full Name Input */}
             <input
               type="text"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="Full name"
               className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
               required
