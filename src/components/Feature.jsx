@@ -101,7 +101,7 @@ const Features = () => {
               ref={titleRef}
               className="text-5xl md:text-6xl trial2 font-light italic text-[#5D2D2B] mb-4"
             >
-              What is Abio.site?
+              What is 🅰bio.site?
             </h2>
             <Image
               src="/icons/scribble.svg"
@@ -114,13 +114,13 @@ const Features = () => {
 
           <div className="relative">
             <p className="mt-6 text-[15px] max-w-lg mx-auto font-thin text-[#331400]/80 leading-relaxed">
-              Abio.site is a next-gen link-in-bio tool that gives you a personalized
+              🅰bio.site is a next-gen link-in-bio tool that gives you a personalized
               link (abio.site/yourname) and QR code to showcase your
               socials, contact info and portfolio all in one sleek page.
               <br />
               <br />
-              Pair it with Acard, our smart NFC card, to instantly share your
-              Abio profile with a simple tap, loved by creators, entrepreneurs,
+              Pair it with 🅰card, our smart NFC card, to instantly share your
+              🅰bio profile with a simple tap, loved by creators, entrepreneurs,
               Web3 professionals, and so many others.
             </p>
 

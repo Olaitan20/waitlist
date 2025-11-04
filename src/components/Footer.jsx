@@ -43,7 +43,7 @@ const Footer = () => {
         <div className="border-t border-[#FED45C] pt-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white font-semibold text-[12px] text-center md:text-left">
-              © {currentYear} abio.site — One Link, Endless Connections
+              © {currentYear} 🅰bio.site — One Link, Endless Connections
             </p>
 
             {/* Social Icons */}

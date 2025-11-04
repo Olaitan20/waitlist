@@ -6,7 +6,7 @@ export default function UseCases() {
       num: "01.",
       title: "Professional Networkers & Business",
       bullets: [
-        `Seamless Exchange: Sales or Web3 professionals can instantly share their full contact details, Twitter profile, LinkedIn profile with a single tap of their Acard on a client's phone at conferences or meetings.`,
+        `Seamless Exchange: Sales or Web3 professionals can instantly share their full contact details, Twitter profile, LinkedIn profile with a single tap of their 🅰card on a client's phone at conferences or meetings.`,
         `Networking at Scale: At industry conferences, attendees can quickly exchange information without fumbling for paper business cards that often get lost or tossed.`,
         `Lead Tracking & Follow-up: Sales teams can use the analytics feature to track the number of taps and profile visits, helping them gauge interest and prioritize follow-ups after an event.`,
         `Dynamic Business Cards: A small business owner can update their profile (e.g., change their phone number or add a new promotion) without having to reprint hundreds of cards.`,
@@ -27,7 +27,7 @@ export default function UseCases() {
       num: "03.",
       title: "Service Industry & Events",
       bullets: [
-        `Restaurant/Hotel Staff: Staff can have a custom-branded Acard to share a direct link to a customer satisfaction survey, or a QR code for the Wi-Fi password.`,
+        `Restaurant/Hotel Staff: Staff can have a custom-branded 🅰card to share a direct link to a customer satisfaction survey, or a QR code for the Wi-Fi password.`,
         `Real Estate Agents: An agent can tap their card to instantly share their digital business card, a link to their active listings, or a virtual tour.`,
         `Event Check-in: Events or conferences can use this to create branded digital passes for instant, personalized attendee check-in and information sharing.`,
       ],
@@ -49,7 +49,7 @@ export default function UseCases() {
     <section className="w-full bg-white py-16">
       <div className="max-w-7xl mx-auto px-6">
         <h4 className="text-4xl md:text-4xl trialheader font-semibold text-center mb-12 text-[#FF0000]">
-          Who can use Abio.site?
+          Who can use 🅰bio.site?
         </h4>
 
         <div className="flex flex-col gap-16">
