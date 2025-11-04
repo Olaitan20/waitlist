@@ -52,6 +52,7 @@ const Counter = ({ target, duration = 2000, suffix = "" }) => {
 
 const Waitlist = () => {
   const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
   const [loading, setLoading] = useState(false); // ✅ FIXED: added loading state
   const sectionRef = useRef(null);
   const stepsRef = useRef([]);
@@ -162,33 +163,46 @@ const Waitlist = () => {
         <form
           onSubmit={handleSubmit}
           id="waitlist2"
-          className="relative w-full mb-4 max-w-md mx-auto"
+          className="w-full max-w-md mx-auto border-2 p-4 shadow-[3px_3px_0px_0px_#000000] flex flex-col gap-4"
         >
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your Email"
-            className="w-full px-4 py-3 pr-36 border-2 border-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            required
-          />
-          <button
-            type="submit"
-            disabled={loading}
-            className={`absolute top-1/2 right-2 -translate-y-1/2 bg-[#FED45C] shadow-[2px_2px_0px_0px_#000000] text-[#FF0000] px-4 py-2 font-semibold transition-opacity ${
-              loading ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"
-            }`}
-          >
-            {loading ? "Joining..." : "Waitlist"}
-          </button>
+          {/* Full Name Input */}
+            <input
+              type="text"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              placeholder="Full name"
+              className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
+            />
+
+            {/* Email Input */}
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
+            />
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              disabled={loading}
+              className={`bg-[#FED45C] shadow-[3px_3px_0px_0px_#000000] text-[#FF0000] px-4 py-3 font-semibold transition-opacity ${
+                loading ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"
+              }`}
+            >
+              {loading ? "Joining..." : "Waitlist"}
+            </button>
         </form>
 
-        <p className="text-[15px] mb-10">
-          We'll only use your email to notify you when 🅰bio.site launches
+         <p className="text-[13px] my-4">
+          We Promise to protect your information and keep it confidential
         </p>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 mt-10 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
             <div key={index} ref={addToStepsRefs} className="text-center">
               <div className="text-4xl mb-4">{step.icon}</div>

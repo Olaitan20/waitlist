@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
   const [loading, setLoading] = useState(false);
 
   // Refs for GSAP
@@ -173,7 +174,7 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center mt-8 justify-center min-h-[90vh] md:min-h-[100vh] px-6 text-center">
+      <div className="relative z-10 flex flex-col items-center mt-8 justify-center min-h-[100vh] md:min-h-[100vh] px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <h1
             ref={titleRef}
@@ -211,26 +212,42 @@ const Hero = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="relative w-full max-w-md mx-auto"
+            className="w-full max-w-md mx-auto flex flex-col gap-4"
           >
+            {/* Full Name Input */}
+            <input
+              type="text"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              placeholder="Full name"
+              className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
+            />
+
+            {/* Email Input */}
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="w-full px-4 py-3 pr-36 border-2 border-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              placeholder="Email"
+              className="w-full px-4 py-3 border-2 border-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
               required
             />
+
+            {/* Submit Button */}
             <button
               type="submit"
               disabled={loading}
-              className={`absolute top-1/2 right-2 -translate-y-1/2 bg-[#FED45C] shadow-[2px_2px_0px_0px_#000000] text-[#FF0000] px-4 py-2 font-semibold transition-opacity ${
+              className={`bg-[#FED45C] shadow-[3px_3px_0px_0px_#000000] text-[#FF0000] px-4 py-3 font-semibold transition-opacity ${
                 loading ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"
               }`}
             >
               {loading ? "Joining..." : "Waitlist"}
             </button>
           </form>
+            <p className="text-[13px] my-4">
+          We Promise to protect your information and keep it confidential
+        </p>
         </div>
       </div>
 
