@@ -105,7 +105,7 @@ const Header = () => {
               priority
               className="cursor-pointer select-none transition-transform group-hover:scale-105"
             />
-            <span className="font-bold text-xl md:text-3xl text-black tracking-wide ">
+            <span className="font-bold text-xl md:text-2xl text-black tracking-wide ">
               bio
             </span>
           </Link>
