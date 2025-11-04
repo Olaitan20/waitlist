@@ -17,7 +17,7 @@ export default function FAQs() {
               
               className="text-5xl trial2 font-medium italic text-[#5D2D2B] mb-4"
             >
-              How does 🅰bio.site work?
+              How does Abio.site work?
             </h2>
             
           </div>

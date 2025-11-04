@@ -101,7 +101,7 @@ const Features = () => {
               ref={titleRef}
               className="text-5xl md:text-6xl trial2 font-light italic text-[#5D2D2B] mb-4"
             >
-              What is 🅰bio.site?
+              What is Abio.site?
             </h2>
             <Image
               src="/icons/scribble.svg"
@@ -120,7 +120,7 @@ const Features = () => {
               <br />
               <br />
               Pair it with Acard, our smart NFC card, to instantly share your
-              🅰bio profile with a simple tap, loved by creators, entrepreneurs,
+              Abio profile with a simple tap, loved by creators, entrepreneurs,
               Web3 professionals, and so many others.
             </p>
 
