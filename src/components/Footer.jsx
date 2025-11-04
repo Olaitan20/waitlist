@@ -9,46 +9,36 @@ const Footer = () => {
   return (
     <footer className="bg-[#331400] text-white py-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Brand Section */}
-          <div className="md:col-span-2">
-            <Link href="/" className="inline-block">
-              <img
-                src="/icons/logo2.svg"
-                alt="Abio Logo"
-                className="cursor-pointer w-28 md:w-32"
-              />
-            </Link>
-          </div>
+        {/* Brand & Legal Section */}
+<div className="flex justify-between items-center gap-6 mb-6 w-full flex-nowrap">
+  {/* Brand Section */}
+  <div className="flex items-center justify-start">
+    <Link href="/" className="inline-block">
+      <img
+        src="/icons/logo2.svg"
+        alt="Abio Logo"
+        className="cursor-pointer w-28 md:w-32"
+      />
+    </Link>
+  </div>
 
-          {/* Product Links */}
-          <div>
-            <h3 className="font-bold trial text-xl mb-4">Product</h3>
-            <div className="flex flex-col space-y-4 font-thin text-[13px]">
-              <Link href="#">Features</Link>
-              <Link href="#">How it works</Link>
-              <Link href="#">Setup</Link>
-              <Link href="#">FAQ</Link>
-            </div>
-          </div>
+  {/* Legal Links */}
+  <div className="flex justify-end">
+    <Link
+      href="#"
+      className="font-bold trial text-[16px] md:text-[20px] hover:underline whitespace-nowrap"
+    >
+      Privacy Policy
+    </Link>
+  </div>
+</div>
 
-          {/* Legal Links */}
-          <div>
-            <h3 className="font-bold trial text-xl mb-4">Legal</h3>
-            <div className="flex flex-col space-y-4 font-thin text-[13px]">
-              <Link href="#">Terms of Service</Link>
-              <Link href="#">Privacy Policy</Link>
-              <Link href="#">Community Guidelines</Link>
-              <Link href="#">Cookie Policy</Link>
-            </div>
-          </div>
-        </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-[#FED45C] pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white font-semibold text-sm mb-4 md:mb-0">
-              © {currentYear} abio.site One Link Endless Connections
+        <div className="border-t border-[#FED45C] pt-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-white font-semibold text-[12px] text-center md:text-left">
+              © {currentYear} abio.site — One Link, Endless Connections
             </p>
 
             {/* Social Icons */}
@@ -57,7 +47,7 @@ const Footer = () => {
                 href="https://www.instagram.com/abio.site?igsh=MXhjYmtvOWlvbXBpeg%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-1 border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2  transition-all"
+                className="border border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2 hover:opacity-80 transition-all"
               >
                 <FaInstagram />
               </a>
@@ -65,7 +55,7 @@ const Footer = () => {
                 href="https://www.tiktok.com/@abio.site?_t=ZS-90XaM2rHhp4&_r=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-1 border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2 transition-all"
+                className="border border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2 hover:opacity-80 transition-all"
               >
                 <FaTiktok />
               </a>
@@ -73,7 +63,7 @@ const Footer = () => {
                 href="https://pin.it/4rk3x7b28"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-1 border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2 transition-all"
+                className="border border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2 hover:opacity-80 transition-all"
               >
                 <FaPinterest />
               </a>
@@ -81,7 +71,7 @@ const Footer = () => {
                 href="https://x.com/abioprofile?s=21"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-1 border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2 transition-all"
+                className="border border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2 hover:opacity-80 transition-all"
               >
                 <FaTwitter />
               </a>
@@ -94,6 +84,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
 
 

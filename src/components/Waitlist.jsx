@@ -3,10 +3,11 @@ import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Logo from "./shared/Logo";
+import { postFetch } from "../lib/fetcher";
+import toast, { Toaster } from "react-hot-toast";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Counter component with scroll-triggered animation
 const Counter = ({ target, duration = 2000, suffix = "" }) => {
   const [count, setCount] = useState(0);
   const counterRef = useRef(null);
@@ -51,18 +52,14 @@ const Counter = ({ target, duration = 2000, suffix = "" }) => {
 
 const Waitlist = () => {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false); // ✅ FIXED: added loading state
   const sectionRef = useRef(null);
   const stepsRef = useRef([]);
   stepsRef.current = [];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Waitlist email submitted:", email);
-  };
-
   const steps = [
     { icon: "📝", title: "Join Waitlist", description: "Sign up with your email" },
-    { icon: "🔔", title: "Get Notified", description: "We'll let you know we launch" },
+    { icon: "🔔", title: "Get Notified", description: "We'll let you know when we launch" },
     { icon: "🚀", title: "Start Connecting", description: "Join 🅰bio.site and connect seamlessly" },
   ];
 
@@ -72,9 +69,33 @@ const Waitlist = () => {
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!email.trim()) {
+      return toast.error("Please enter a valid email address.");
+    }
+
+    setLoading(true);
+    try {
+      const result = await postFetch("/waitlist", { email });
+
+      if (typeof result === "string") {
+        return toast.error(result);
+      }
+
+      toast.success("You’ve been added to the waitlist 🎉");
+      console.log("Response:", result);
+      setEmail("");
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Section fade-in
       gsap.from(sectionRef.current, {
         opacity: 0,
         y: 50,
@@ -86,7 +107,6 @@ const Waitlist = () => {
         },
       });
 
-      // Stagger steps animation
       gsap.from(stepsRef.current, {
         opacity: 0,
         y: 40,
@@ -105,14 +125,17 @@ const Waitlist = () => {
 
   return (
     <section id="waitlist" ref={sectionRef} className="py-16">
+      <Toaster position="top-center" />
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-[40px] trial2 md:text-5xl trial font-semibold text-[#5D2D2B] mb-2 md:mb-4 italic">
+        <h2 className="text-[40px] md:text-5xl font-semibold text-[#5D2D2B] mb-2 md:mb-4 italic">
           Join our Waitlist
         </h2>
 
-        <p className="text-[14px] md:text-[15px]">Showcase your links, get closer to your audience faster.</p>
+        <p className="text-[14px] md:text-[15px]">
+          Showcase your links, get closer to your audience faster.
+        </p>
         <p className="text-[14px] md:text-[15px] mb-4">All possible with 🅰bio.site</p>
-        
+
         {/* Statistics */}
         <div className="grid grid-cols-1 bg-[#FFDCE3] md:grid-cols-3 gap-8 mb-12">
           <div className="p-6">
@@ -129,14 +152,18 @@ const Waitlist = () => {
           </div>
           <div className="p-6">
             <div className="text-3xl font-bold text-gray-800 mb-2">
-              <Counter target={49000}/>
+              <Counter target={49000} />
             </div>
             <div className="text-gray-600">to go</div>
           </div>
         </div>
 
         {/* Email signup */}
-        <form onSubmit={handleSubmit} id="waitlist2" className="relative w-full mb-4 max-w-md mx-auto">
+        <form
+          onSubmit={handleSubmit}
+          id="waitlist2"
+          className="relative w-full mb-4 max-w-md mx-auto"
+        >
           <input
             type="email"
             value={email}
@@ -147,13 +174,18 @@ const Waitlist = () => {
           />
           <button
             type="submit"
-            className="absolute top-1/2 right-2 -translate-y-1/2 bg-[#FED45C] shadow-[2px_2px_0px_0px_#000000] text-[#FF0000] px-4 py-2 font-semibold "
+            disabled={loading}
+            className={`absolute top-1/2 right-2 -translate-y-1/2 bg-[#FED45C] shadow-[2px_2px_0px_0px_#000000] text-[#FF0000] px-4 py-2 font-semibold transition-opacity ${
+              loading ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"
+            }`}
           >
-            Waitlist
+            {loading ? "Joining..." : "Waitlist"}
           </button>
         </form>
 
-        <p className="text-[15px] mb-10">We'll only use your email to notify you when 🅰bio.site launches</p>
+        <p className="text-[15px] mb-10">
+          We'll only use your email to notify you when 🅰bio.site launches
+        </p>
 
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -165,17 +197,11 @@ const Waitlist = () => {
             </div>
           ))}
         </div>
-
-        {/* Large A.Bio branding */}
-        {/* <div className="mt-20 opacity-10">
-          <div className="text-6xl md:text-9xl font-bold text-gray-400 tracking-wider">
-            <Logo width={400} height={400} showText={true} textSize="text-20xl" />
-          </div>
-        </div> */}
       </div>
     </section>
   );
 };
 
 export default Waitlist;
+
 
