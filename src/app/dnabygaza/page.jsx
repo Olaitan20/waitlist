@@ -40,13 +40,7 @@ export default function Home({ defaultTab = 'links' }) {
 
           {/* Foreground content */}
           <div className="relative z-10 w-full px-4 py-6 max-w-md mx-auto">
-            {tab === 'links' && (
-              <div className="mb-6">
-                <DnaFormV1 />
-              </div>
-            )}
-
-            {tab === 'links' ? (
+             {tab === 'links' ? (
               <LinkListV1 />
             ) : (
               <div className="space-y-4 pb-10">
@@ -63,6 +57,29 @@ export default function Home({ defaultTab = 'links' }) {
                 ))}
               </div>
             )}
+            {tab === 'links' && (
+              <div className="mb-6">
+                <DnaFormV1 />
+              </div>
+            )}
+
+            {/* {tab === 'links' ? (
+              <LinkListV1 />
+            ) : (
+              <div className="space-y-4 pb-10">
+                {Object.entries(MENU).map(([title, items], index) => (
+                  <AccordionV2
+                    key={title}
+                    title={title}
+                    items={items}
+                    isOpen={openIndex === index}
+                    onToggle={() =>
+                      setOpenIndex(openIndex === index ? null : index)
+                    }
+                  />
+                ))}
+              </div>
+            )} */}
           </div>
         </div>
 
