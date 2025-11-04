@@ -13,7 +13,7 @@
           {/* Brand & Legal Section */}
   <div className="flex justify-between items-center gap-6 mb-6 w-full flex-nowrap">
     {/* Brand Section */}
-      <Link href="/" className="flex items-center gap-1 group">
+      <Link href="/" className="flex items-center gap-[2px] group">
               <Image
                 src="/icons/A.Bio.png"
                 alt="A.Bio Logo"
@@ -22,8 +22,8 @@
                 priority
                 className="cursor-pointer select-none transition-transform group-hover:scale-105"
               />
-              <span className="font-bold text-xl md:text-2xl text-white tracking-wide ">
-                bio.site
+              <span className="font-bold text-xl md:text-3xl text-white tracking-wide ">
+                bio
               </span>
             </Link>
 
@@ -43,7 +43,7 @@
           <div className="border-t border-[#FED45C] pt-4">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-white font-semibold text-[12px] text-center md:text-left">
-                © {currentYear} 🅰bio.site — One Link, Endless Connections
+                © {currentYear} 🅰bio — One Link, Endless Connections
               </p>
 
               {/* Social Icons */}

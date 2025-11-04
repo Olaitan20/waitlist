@@ -52,7 +52,7 @@ export const metadata = {
   title: "Abio",
   description: "Link in bio",
   icons: {
-    icon: "/icons/vercel.svg", 
+    icon: "/icons/A.Bio.png", 
   },
 };
 
