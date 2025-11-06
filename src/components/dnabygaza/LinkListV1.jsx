@@ -1,29 +1,29 @@
-import React from 'react'
-import { FaTiktok, FaInstagram, FaWhatsapp, FaSnapchatGhost } from 'react-icons/fa'
+import Image from "next/image";
+import React from "react";
 
 export default function LinkListV1() {
   const items = [
     {
-      label: 'TikTok',
-      icon: <FaTiktok size={22} color="#000000" />, // Black TikTok icon
-      href: 'https://www.tiktok.com/@clubdnalagos?_t=ZS-90MieW3lHCZ&_r=1',
+      label: "TikTok",
+      icon: "/icons/tiktok.svg",
+      href: "https://www.tiktok.com/@clubdnalagos?_t=ZS-90MieW3lHCZ&_r=1",
     },
     {
-      label: 'Follow Our Instagram',
-      icon: <FaInstagram size={22} color="#E1306C" />, // Instagram pink
-      href: 'https://www.instagram.com/clubdnalagos',
+      label: "Follow Our Instagram",
+      icon: "/icons/instagram.svg",
+      href: "https://www.instagram.com/clubdnalagos",
     },
     {
-      label: 'Reservation',
-      icon: <FaWhatsapp size={22} color="#25D366" />, // WhatsApp green
-      href: 'https://wa.link/k7egap',
+      label: "Reservation",
+      icon: "/icons/whatsapp.svg",
+      href: "https://wa.link/k7egap",
     },
     {
-      label: 'Add Us On Snapchat',
-      icon: <FaSnapchatGhost size={22} color="#FFFC00" />, // Snapchat yellow
-      href: 'https://snapchat.com/t/finKlDlh',
+      label: "Add Us On Snapchat",
+      icon: "/icons/snapchat.svg",
+      href: "https://snapchat.com/t/finKlDlh",
     },
-  ]
+  ];
 
   return (
     <div className="space-y-4">
@@ -35,7 +35,15 @@ export default function LinkListV1() {
           rel="noopener noreferrer"
           className="flex items-center text-[13px] gap-3 bg-[#FFFFFF]/30 text-white px-4 py-3 font-semibold shadow-md active:scale-[0.98] transition-transform duration-150"
         >
-          <div className="flex-shrink-0">{it.icon}</div>
+          <div className="flex-shrink-0">
+            <Image
+              src={it.icon}
+              alt={it.label}
+              width={22}
+              height={22}
+              className="object-contain"
+            />
+          </div>
           <span className="truncate">{it.label}</span>
         </a>
       ))}
@@ -45,11 +53,11 @@ export default function LinkListV1() {
         href="https://dnabygaza.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="block text-center bg-[#FFFFFF]/30 text-white font-bold py-3 my-6 shadow-md active:scale-[0.97] transition-transform duration-150"
+        className="block text-[13px] bg-[#FFFFFF]/30 text-white font-bold px-12 py-3 my-6 shadow-md active:scale-[0.97] transition-transform duration-150"
       >
         Checkout our website
       </a>
     </div>
-  )
+  );
 }
 
