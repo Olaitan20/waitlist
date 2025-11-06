@@ -21,7 +21,7 @@ export default function HeaderV1() {
             <div className="text-[18px] leading-tight text-black font-bold">
               DNA BY GAZA
             </div>
-            <div className="text-[13px] font-thin text-gray-500">@dnabygaza</div>
+            <div className="text-[12px] font-thin text-gray-500">@dnabygaza</div>
           </div>
         </div>
       </header>
@@ -35,7 +35,7 @@ export default function HeaderV1() {
   href="https://www.google.com/maps/place/62+Adetokunbo+Ademola+Street,+Victoria+Island,+Lagos+101241,+Lagos,+Nigeria/@6.4280563,3.4211123,17z/data=!3m1!4b1!4m5!3m4!1s0x103bf486fbc6f2b5:0x8e5f6f2c1e8e4e0!8m2!3d6.4280519!4d3.423301?hl=en"
   target="_blank"
   rel="noopener noreferrer"
-  className="inline-flex items-center gap-1 px-2 py-1 border border-[#989898] text-black text-[10px] w-fit shadow-sm hover:bg-gray-100 transition"
+  className="inline-flex items-center gap-1 px-2 py-1 border border-gray-200 text-[#ececf5] text-[10px] w-fit hover:bg-gray-100 transition"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
