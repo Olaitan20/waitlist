@@ -4,43 +4,45 @@ import React, { useState } from 'react'
 export default function DnaFormV1() {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
+  const [dob, setDob] = useState('') // 👈 New state for Date of Birth
   const [status, setStatus] = useState('idle')
 
   async function submit(e) {
-  e.preventDefault()
-  try {
-    const res = await fetch('https://sheetdb.io/api/v1/02p8r1kfblerq', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        data: [
-          {
-            name,
-            phone,
-          },
-        ],
-      }),
-    })
+    e.preventDefault()
+    try {
+      const res = await fetch('https://sheetdb.io/api/v1/02p8r1kfblerq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          data: [
+            {
+              name,
+              phone,
+              dob, // 👈 include DOB in the data sent to SheetDB
+            },
+          ],
+        }),
+      })
 
-    if (res.ok) {
-      setStatus('ok')
-      setName('')
-      setPhone('')
-    } else {
+      if (res.ok) {
+        setStatus('ok')
+        setName('')
+        setPhone('')
+        setDob('')
+      } else {
+        setStatus('err')
+      }
+    } catch (err) {
+      console.error(err)
       setStatus('err')
     }
-  } catch (err) {
-    console.error(err)
-    setStatus('err')
   }
-}
-
 
   return (
     <div className="relative">
       <form
         onSubmit={submit}
-        className="p-3 bg-white/30 backdrop-blur-md space-y-4 text-center border border-white/10"
+        className="p-3 bg-white/30 backdrop-blur-md space-y-4 text-center border border-white/10 rounded-lg"
       >
         <h2 className="text-lg font-semibold text-white tracking-wide">
           DNA Checkup
@@ -55,11 +57,21 @@ export default function DnaFormV1() {
           required
         />
 
-        {/* Phone number (optional) */}
+        {/* DOB */}
         <div className="text-left">
-          <label className="text-xs text-white mb-1 block">
-            Phone Number 
-          </label>
+          <label className="text-xs text-white mb-1 block">Date of Birth</label>
+          <input
+            type="date"
+            value={dob}
+            onChange={(e) => setDob(e.target.value)}
+            className="w-full p-3 bg-white/10 border border-white/70 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#FF0000]"
+            required
+          />
+        </div>
+
+        {/* Phone number */}
+        <div className="text-left">
+          <label className="text-xs text-white mb-1 block">Phone Number</label>
           <input
             type="tel"
             value={phone}
@@ -90,4 +102,5 @@ export default function DnaFormV1() {
     </div>
   )
 }
+
 
