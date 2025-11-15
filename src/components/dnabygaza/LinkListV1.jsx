@@ -91,7 +91,7 @@ export default function LinkListV1() {
   ];
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 mb-4">
       {items.map((it) => (
         <a
           key={it.label}
@@ -118,14 +118,14 @@ export default function LinkListV1() {
       ))}
 
       {/* ✅ Website button */}
-      <a
+      {/* <a
         href="https://dnabygaza.com"
         target="_blank"
         rel="noopener noreferrer"
         className="block text-[13px] bg-[#FFFFFF]/30 text-white font-bold px-12 py-3 my-6 shadow-md active:scale-[0.97] transition-transform duration-150"
       >
         Checkout our website
-      </a>
+      </a> */}
     </div>
   );
 }

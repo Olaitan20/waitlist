@@ -42,7 +42,7 @@ export default function DnaFormV1() {
     <div className="relative">
       <form
         onSubmit={submit}
-        className="p-3 bg-white/30 backdrop-blur-md space-y-4 text-center border border-white/10 rounded-lg"
+        className="p-3 bg-white/30 backdrop-blur-md space-y-4 text-center border border-white/10"
       >
         <h2 className="text-lg font-semibold text-white tracking-wide">
           DNA Checkup
@@ -61,9 +61,10 @@ export default function DnaFormV1() {
         <div className="text-left">
           <label className="text-xs text-white mb-1 block">Date of Birth</label>
           <input
-            type="date"
+            type="text"
             value={dob}
             onChange={(e) => setDob(e.target.value)}
+            placeholder='DD/MM'
             className="w-full p-3 bg-white/10 border border-white/70 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#FF0000]"
             required
           />
