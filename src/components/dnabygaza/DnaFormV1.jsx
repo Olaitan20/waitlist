@@ -61,7 +61,7 @@ export default function DnaFormV1() {
         <div className="text-left">
           <label className="text-xs text-white mb-1 block">Date of Birth</label>
           <input
-            type="text"
+            type="number"
             value={dob}
             onChange={(e) => setDob(e.target.value)}
             placeholder='DD/MM'
