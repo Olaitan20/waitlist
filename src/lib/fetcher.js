@@ -12,6 +12,17 @@ const handleError = (error) => {
   return message; // return instead of throwing
 };
 
+export const getWaitlistCount = async () => {
+  try {
+    const res = await apiInstance.get("/waitlist/count");
+    return res.data.count; // Assuming your API returns { count: 1234 }
+  } catch (err) {
+    console.error("Failed to fetch waitlist count", err);
+    return 0; // fallback
+  }
+};
+
+
 // wrappers
 export const getFetch = async (url) => {
   try {

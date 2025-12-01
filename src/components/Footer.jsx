@@ -49,7 +49,7 @@
               {/* Social Icons */}
               <div className="flex space-x-4 text-lg">
                 <a
-                  href="https://www.instagram.com/abio.site?igsh=MXhjYmtvOWlvbXBpeg%3D%3D&utm_source=qr"
+                  href="https://www.instagram.com/abio_site?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border border-[#fff] shadow-[1px_1px_0px_0px_#fff] p-2 hover:opacity-80 transition-all"

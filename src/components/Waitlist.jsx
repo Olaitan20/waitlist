@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { postFetch } from "../lib/fetcher";
 import toast, { Toaster } from "react-hot-toast";
+import { getWaitlistCount } from "../lib/fetcher";
 
 gsap.registerPlugin(ScrollTrigger);
 
