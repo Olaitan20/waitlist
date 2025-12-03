@@ -83,14 +83,14 @@ export default function LinkListV2() {
   ];
 
   return (
-    <div className="space-y-6 pt-16 mb-4"> {/* Increased from space-y-4 to space-y-6 */}
+    <div className="space-y-8 pt-10 mb-4"> {/* Increased from space-y-4 to space-y-6 */}
       {items.map((it) => (
         <a
           key={it.label}
           href={it.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center text-[13px] gap-3 bg-white/30 text-white px-4 py-4 font-bold shadow-lg active:scale-[0.98] transition-all duration-150 rounded-lg" 
+          className="flex items-center text-[13px] gap-3 bg-white/10 border-2 text-white px-4 py-4 font-bold shadow-lg active:scale-[0.98] transition-all duration-150 " 
           style={{
             boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
             backdropFilter: 'blur(8px)'
@@ -119,7 +119,7 @@ export default function LinkListV2() {
   href="https://abio.site"
   target="_blank"
   rel="noopener noreferrer"
-  className="flex items-center justify-start gap-3 text-sm bg-white/30 text-white px-4 py-4 font-bold shadow-lg active:scale-[0.97] transition-all duration-150 rounded-lg"
+  className="flex items-center justify-start gap-3 text-sm bg-white/10 border-2 text-white px-4 py-4 font-bold shadow-lg active:scale-[0.97] transition-all duration-150 "
   style={{
     boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
     backdropFilter: 'blur(8px)'

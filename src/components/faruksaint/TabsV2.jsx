@@ -10,7 +10,7 @@ export default function TabsV2({ value, onChange }) {
         {/* Links Tab */}
         <button
           onClick={() => onChange("links")}
-          className={`pb-1 px-2 font-semibold transition-all relative ${
+          className={`-pb-2 px-2 font-semibold transition-all relative ${
             value === "links"
               ? "text-gray-900"
               : "text-gray-400 hover:text-gray-700"
@@ -18,7 +18,7 @@ export default function TabsV2({ value, onChange }) {
         >
           Links
           {value === "links" && (
-            <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#FF0000]" />
+            <span className="absolute -bottom-2 left-0 right-0 h-[2px] bg-[#FF0000]" />
           )}
         </button>
 

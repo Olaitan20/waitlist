@@ -1,6 +1,6 @@
 import Image from "next/image"
 import React from "react"
-import profilePic from "../../../public/lala.jpg"
+import profilePic from "../../../public/Ellipse 46.png"
 
 export default function HeaderV2() {
   return (
@@ -27,11 +27,11 @@ export default function HeaderV2() {
       </header>
 
       <p className="text-[14px] font-medium text-black leading-5">
-        🅰 Polymath
+        Founder, Creative Director
       </p>
 
       {/* ✅ Compact location pill with pin icon */}
-<a
+{/* <a
   href="https://maps.app.goo.gl/Dor99She1GMEJzh7A"
   target="_blank"
   rel="noopener noreferrer"
@@ -53,7 +53,7 @@ export default function HeaderV2() {
     <circle cx="12" cy="10" r="3" />
   </svg>
   <span>Akoka, Lagos</span>
-</a>
+</a> */}
 
     </section>
   )

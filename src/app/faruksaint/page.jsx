@@ -19,7 +19,7 @@ export default function Home({ defaultTab = 'links' }) {
       {/* Full Background Image */}
       <div className="fixed inset-0 z-0">
         <Image
-          src="/fsLogo.jpg"
+          src="/Rectangle 214.jpg"
           alt="Background"
           fill
           className="object-cover"
