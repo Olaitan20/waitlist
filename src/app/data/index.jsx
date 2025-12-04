@@ -206,6 +206,7 @@ export const MENU = {
     { name: "Veuve Clicquot Rosé", price: "₦310,000" },
     { name: "Ruinart Rosé", price: "₦450,000" },
     { name: "Laurent Perrier Rosé", price: "₦450,000" },
+    { name: "Canard Duchéné", price: "₦200,000" },
   ],
 
   "VODKA": [
