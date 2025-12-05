@@ -184,8 +184,6 @@ export const MENU = {
     { name: "Clase Azul Mescal Gold", price: "₦1,900,000" },
     { name: "Clase Mescal Green", price: "₦2,000,000" },
     { name: "Clase Azul Anejo", price: "₦2,500,000" },
-    { name: "Don Julio 1942", price: "₦1,300,000" },
-    { name: "Don Julio 1942 Magnum", price: "₦2,600,000" },
     { name: "Casamigo 75CL", price: "₦600,000" },
     { name: "Casamigo 1LTR", price: "₦900,000" },
     { name: "Casamigo Magnum", price: "₦2,500,000" },
