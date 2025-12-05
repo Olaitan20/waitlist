@@ -171,6 +171,12 @@ export const templates = [
   },
 ];
 export const MENU = {
+  "DON JULIO": [
+    { name: "Don Julio Blanco", price: "₦600,000" },
+    { name: "Don Julio Respasado", price: "₦600,000" },
+    { name: "Don Julio 1942", price: "₦1,300,000" },
+    { name: "Don Julio 1942 Magnum", price: "₦2,600,000" },
+  ],
   "TEQUILA": [
     { name: "Volcan XA", price: "₦1,000,000" },
     { name: "Clase Azul", price: "₦1,300,000" },
