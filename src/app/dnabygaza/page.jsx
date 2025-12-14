@@ -9,7 +9,7 @@ import LinkListV1 from '../../components/dnabygaza/LinkListV1.jsx'
 import DnaFormV1 from '../../components/dnabygaza/DnaFormV1.jsx'
 import AccordionV2 from '../../components/dnabygaza/AccordionV2.jsx'
 import { MENU } from '../data/index.jsx'
-import Tickets from '../../components/dnabygaza/Tickets.jsx'
+import Tickets from '../../components/tickets/Tickets.jsx'
 
 export default function Home({ defaultTab = 'links' }) {
   const [tab, setTab] = useState(defaultTab)

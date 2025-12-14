@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Calendar, Clock, MapPin, ChevronRight, Sparkles, Ticket } from 'lucide-react'
-import TicketContactForm from './TicketContactForm'
+import TicketContactForm from '../dnabygaza/TicketContactForm'
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion'
 
 export default function Tickets() {
