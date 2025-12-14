@@ -46,16 +46,7 @@ export default function TabsV1({ value, onChange }) {
           Menu
         </button>
 
-        {/* Tickets Tab */}
-        <button
-          data-tab="tickets"
-          onClick={() => onChange("tickets")}
-          className={`-pb-1 px-2 font-semibold transition-colors ${
-            value.toLowerCase() === "tickets" ? "text-black" : "text-gray-400 hover:text-gray-700"
-          }`}
-        >
-          Tickets
-        </button>
+        
 
         {/* Sliding Underline */}
         <span
