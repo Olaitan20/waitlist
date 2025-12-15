@@ -184,12 +184,12 @@ export const MENU = {
     { name: "Clase Azul Mescal Gold", price: "₦1,900,000" },
     { name: "Clase Mescal Green", price: "₦2,000,000" },
     { name: "Clase Azul Anejo", price: "₦2,500,000" },
-    { name: "Casamigo 75CL", price: "₦600,000" },
+    { name: "Casamigo 75CL", price: "₦800,000" },
     { name: "Casamigo 1LTR", price: "₦900,000" },
     { name: "Casamigo Magnum", price: "₦2,500,000" },
     { name: "Komos Rosa", price: "₦700,000" },
     { name: "Komos Resavo", price: "₦1,350,000" },
-    { name: "Olmeca Gold", price: "₦60,000" },
+    { name: "Olmeca Gold", price: "₦100,000" },
   ],
 
   "COGNAC": [
@@ -199,15 +199,17 @@ export const MENU = {
     { name: "Hennessy VSOP", price: "₦350,000" },
     { name: "Hennessy XO", price: "₦1,100,000" },
     { name: "Hennessy Paradis", price: "₦5,000,000" },
-    { name: "Remy VSOP", price: "₦310,000" },
+    { name: "Remy VSOP", price: "₦350,000" },
     { name: "Remy Martin 1738", price: "₦360,000" },
     { name: "Remy Martin XO", price: "₦1,000,000" },
     { name: "Remy Martin Louis XIII", price: "₦12,500,000" },
   ],
 
   "ROSE CHAMPAGNE": [
-    { name: "Moet & Chandon Nectar Rosé", price: "₦350,000" },
-    { name: "Veuve Clicquot Rosé", price: "₦310,000" },
+    { name: "Veuve Clicquot Rosé", price: "₦350,000" },
+    { name: "Moët Brut", price: "₦300,000" },
+    { name: "Veuve Brut", price: "₦400,000" },
+    { name: "Veuve Rich", price: "₦450,000" },
     { name: "Ruinart Rosé", price: "₦450,000" },
     { name: "Laurent Perrier Rosé", price: "₦450,000" },
     { name: "Canard Duchéné", price: "₦200,000" },
@@ -255,7 +257,7 @@ export const MENU = {
   "SINGLE MALT WHISKEY": [
     { name: "Glenmorangie Signet", price: "₦800,000" },
     { name: "Glenmorangie Original", price: "₦365,000" },
-    { name: "Glenfiddich 18YRS", price: "₦335,000" },
+    { name: "Glenfiddich 18YRS", price: "₦400,000" },
     { name: "Glenfiddich 21YRS", price: "₦1,000,000" },
     { name: "Glenfiddich 23YRS", price: "₦1,300,000" },
     { name: "Glenfiddich 26YRS", price: "₦2,600,000" },
@@ -283,7 +285,7 @@ export const MENU = {
     { name: "Hendrick", price: "₦250,000" },
   ],
   "OTHERS": [
-    { name: "Cocktail", price: "₦25,000" },
+    { name: "Cocktail", price: "₦30,000" },
     { name: "Wine", price: "₦160,000" },
     { name: "Small Vape", price: "₦120,000" },
   ],
