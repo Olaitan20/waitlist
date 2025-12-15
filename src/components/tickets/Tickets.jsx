@@ -24,7 +24,7 @@ export default function Tickets() {
   const lineup = [
     { name: 'Burna Boy', role: 'Guest Host', img: '/burna-boy.png' },
     { name: 'Phyno', role: 'Guest Host', img: '/seyi-vibez.JPG' },
-    { name: 'Seyi Vibez', role: 'Performing Live', img: '/phyno.jpg' },
+    { name: 'Seyi Vibez', role: 'Performing Live', img: '/phyno.png' },
     { name: 'Poco Lee', role: 'Performing Live', img: '/Pocolee.png' },
   ]
   
