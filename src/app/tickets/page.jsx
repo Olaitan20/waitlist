@@ -19,11 +19,11 @@ export default function Home({ defaultTab = 'links' }) {
       <div className="relative z-10">
         <Frame>
           {/* Header (scrolls away) */}
-          <HeaderV3 />
+          {/* <HeaderV3 /> */}
 
           {/* Tabs sticky to viewport top */}
-          <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-md">
-            <TabsV3 value={tab} onChange={setTab} />
+          <div className="sticky top-0 z-40">
+            {/* <TabsV3 value={tab} onChange={setTab} /> */}
           </div>
 
           {/* Content container */}

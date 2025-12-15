@@ -2,9 +2,9 @@
 
 import React from "react"
 
-export default function TabsV2({ value, onChange }) {
+export default function TabsV3({ value, onChange }) {
   return (
-    <div className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b  border-gray-200">
+    <div className="sticky top-0 z-50 bg-black/60 ">
       {/* ✅ Centered tabs */}
       <div className="flex justify-start gap-8 px-6 py-2">
         {/* Links Tab */}

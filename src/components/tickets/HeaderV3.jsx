@@ -4,7 +4,7 @@ import profilePic from "../../../public/dec.logo.jpg"
 
 export default function HeaderV3() {
   return (
-    <section className="px-4 py-4 bg-white space-y-2">
+    <section className="px-4 py-4 bg-black/60 space-y-2">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           {/* ✅ Profile image */}
@@ -20,10 +20,10 @@ export default function HeaderV3() {
 </div>
 
           <div>
-            <div className="text-[18px] mb-2 leading-tight text-black font-bold">
+            <div className="text-[18px] mb-2 leading-tight text-white font-bold">
               Dettycember Rave
             </div>
-            <div className="text-[12px] font-thin text-gray-500">@Dettycember</div>
+            {/* <div className="text-[12px] font-thin text-gray-500">@Dettycember</div> */}
           </div>
         </div>
       </header>

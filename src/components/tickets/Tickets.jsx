@@ -22,10 +22,10 @@ export default function Tickets() {
   ]
   
   const lineup = [
-    { name: 'Burna Boy', role: 'Guest Host', img: '/burna-boy.png' },
-    { name: 'Phyno', role: 'Guest Host', img: '/phyno.png' },
-    { name: 'Seyi Vibez', role: 'Performing Live', img: '/seyi-vibez.png' },
-    { name: 'Poco Lee', role: 'Performing Live', img: '/pocolee.png' },
+    { name: 'Burna Boy', role: 'Guest Host', img: '/burna-boy.jpg' },
+    { name: 'Phyno', role: 'Guest Host', img: '/seyi-vibez.JPG' },
+    { name: 'Seyi Vibez', role: 'Performing Live', img: '/phyno.jpg' },
+    { name: 'Poco Lee', role: 'Performing Live', img: '/pocolee.jpg' },
   ]
   
   useEffect(() => {
@@ -113,7 +113,7 @@ export default function Tickets() {
       </motion.div>
 
       <motion.div variants={containerVariants} className="relative z-10 px-4 pt-6 pb-24 space-y-6 flex-grow">
-        <motion.h1 variants={itemVariants} className="text-2xl font-bold leading-tight">
+        <motion.h1 variants={itemVariants} className="text-2xl capitalize font-bold leading-tight">
           Dettycember Rave
           <motion.div
             initial={{ width: 0 }}
@@ -123,6 +123,37 @@ export default function Tickets() {
           />
         </motion.h1>
 
+        {/* Event Image Added Here */}
+        <motion.div 
+          variants={itemVariants}
+          className="relative w-full h-48 md:h-64 lg:h-72 rounded-xl overflow-hidden shadow-2xl border border-white/10"
+        >
+          <Image
+            src="/eventflyer.jpeg" // Replace with your actual event image path
+            alt="Dettycember Rave Event"
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
+          />
+          {/* Optional: Gradient overlay for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          {/* Optional: Event badge/tag */}
+          <div className="absolute top-3 right-3 bg-[#FED45C] text-[#331400] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+            Premium Event
+          </div>
+        </motion.div>
+          <motion.h1 variants={itemVariants} className="text-xl capitalize font-medium leading-tight">
+          win a free ticket!
+          
+          <p className='text-[10px] leading-tight text-white/90 my-2'>Hurry up! Fill in your details, complete the task and be at the top of the list. You stand a chance to win a free ticket to see your favs at Dettycember Rave.</p>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "60px" }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="h-[2px] bg-[#FED45C] mt-2"
+          />
+        </motion.h1>
         <motion.div variants={containerVariants} className="space-y-3 text-[12px]">
           {details.map((item, index) => (
             <motion.div 
@@ -137,7 +168,7 @@ export default function Tickets() {
             </motion.div>
           ))}
         </motion.div>
-
+          
         <motion.div variants={itemVariants} className="pt-4">
           <h2 className="text-[16px] font-bold uppercase tracking-wide mb-3">Lineup</h2>
           <div className="grid grid-cols-4 gap-3">
