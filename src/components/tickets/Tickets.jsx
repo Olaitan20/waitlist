@@ -25,7 +25,7 @@ export default function Tickets() {
     { name: 'Burna Boy', role: 'Guest Host', img: '/burna-boy.jpg' },
     { name: 'Phyno', role: 'Guest Host', img: '/seyi-vibez.JPG' },
     { name: 'Seyi Vibez', role: 'Performing Live', img: '/phyno.jpg' },
-    { name: 'Poco Lee', role: 'Performing Live', img: '/pocolee.png' },
+    { name: 'Poco Lee', role: 'Performing Live', img: '/Pocolee.png' },
   ]
   
   useEffect(() => {
