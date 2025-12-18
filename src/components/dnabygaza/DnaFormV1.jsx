@@ -42,7 +42,7 @@ export default function DnaFormV1() {
     <div className="relative">
       <form
         onSubmit={submit}
-        className="p-3 bg-white/30 backdrop-blur-md space-y-4 text-center border border-white/10"
+        className="p-3 bg-[#000000]/35 backdrop-blur-md space-y-4 text-center border border-white/10"
       >
         <h2 className="text-lg font-semibold text-white tracking-wide">
           DNA Checkup

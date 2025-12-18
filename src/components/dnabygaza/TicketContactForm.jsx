@@ -8,6 +8,14 @@ export default function TicketContactForm({ onBack }) {
   const [step, setStep] = useState('contact') // 'contact', 'repost', or 'done'
   const [isVisible, setIsVisible] = useState(true)
   const fileInputRef = useRef(null)
+  
+  // Form state
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [igLink, setIgLink] = useState('')
+  const [file, setFile] = useState('')
+  const [status, setStatus] = useState('idle')
 
   useEffect(() => {
     const originalStyle = window.getComputedStyle(document.body).overflow
@@ -17,6 +25,44 @@ export default function TicketContactForm({ onBack }) {
       document.body.style.overflow = originalStyle
     }
   }, [])
+
+  // Form submission
+  async function submit(e) {
+    e.preventDefault()
+    try {
+      const res = await fetch('https://sheetdb.io/api/v1/ufjrm7089cm4m', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          data: [
+            {
+              name,
+              email,
+              phone,
+              igLink,
+              file,
+            },
+          ],
+        }),
+      })
+
+      if (res.ok) {
+        setStatus('ok')
+        setName('')
+        setEmail('')
+        setPhone('')
+        setIgLink('')
+        setFile('')
+        // Move to done step after successful submission
+        setTimeout(() => setStep('done'), 500)
+      } else {
+        setStatus('err')
+      }
+    } catch (err) {
+      console.error(err)
+      setStatus('err')
+    }
+  }
 
   // Animation variants
   const containerVariants = {
@@ -117,9 +163,9 @@ export default function TicketContactForm({ onBack }) {
   const handleFileUpload = (e) => {
     const file = e.target.files[0]
     if (file) {
-      // Animation for file upload
+      // Store file name or convert to base64
+      setFile(file.name)
       console.log('File selected:', file.name)
-      // You could add state for file preview here
     }
   }
 
@@ -203,23 +249,30 @@ export default function TicketContactForm({ onBack }) {
                   </motion.p>
 
                   <div className="space-y-6">
-                    {['Full Name', 'Email Address', 'Phone Number'].map((field, index) => (
+                    {[
+                      { field: 'Full Name', state: name, setState: setName, type: 'text' },
+                      { field: 'Email Address', state: email, setState: setEmail, type: 'email' },
+                      { field: 'Phone Number', state: phone, setState: setPhone, type: 'tel' }
+                    ].map((item, index) => (
                       <motion.div
-                        key={field}
+                        key={item.field}
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.3 + index * 0.1 }}
                         whileHover={{ scale: 1.01 }}
                       >
                         <label className="block text-sm font-medium mb-2">
-                          {field}<span className="text-black">*</span>
+                          {item.field}<span className="text-black">*</span>
                         </label>
                         <motion.input
                           whileFocus="focus"
                           variants={inputVariants}
-                          type={field.includes('Email') ? 'email' : field.includes('Phone') ? 'tel' : 'text'}
-                          placeholder={field}
+                          type={item.type}
+                          placeholder={item.field}
+                          value={item.state}
+                          onChange={(e) => item.setState(e.target.value)}
                           className="w-full border border-gray-300 px-3 py-3 text-[12px] placeholder:text-gray-400 outline-none focus:border-[#FED45C] focus:ring-2 focus:ring-[#FED45C]/20 transition-all"
+                          required
                         />
                       </motion.div>
                     ))}
@@ -246,7 +299,11 @@ export default function TicketContactForm({ onBack }) {
                       initial="initial"
                       whileHover="hover"
                       whileTap="tap"
-                      onClick={() => setStep('repost')}
+                      onClick={() => {
+                        if (name && email && phone) {
+                          setStep('repost')
+                        }
+                      }}
                       className="bg-[#331400] text-[#FED45C] text-[12px] px-6 py-3 font-semibold relative overflow-hidden group"
                     >
                       <span className="relative z-10 flex items-center gap-2">
@@ -401,7 +458,10 @@ export default function TicketContactForm({ onBack }) {
                         <input
                           type="text"
                           placeholder="Paste link to post/story"
+                          value={igLink}
+                          onChange={(e) => setIgLink(e.target.value)}
                           className="w-full bg-white/10 text-white border-2 border-[#FED45C]/50 px-3 py-3 text-[12px] outline-none focus:border-[#FED45C] focus:bg-white/20 transition-all placeholder:text-white/60"
+                          required
                         />
                       </motion.div>
 
@@ -455,12 +515,15 @@ export default function TicketContactForm({ onBack }) {
                           whileTap={{ scale: 0.9 }}
                           className="relative"
                         >
-                          <input type="checkbox" className="mt-1 opacity-0 absolute" />
-                          <div className="w-4 h-4 border border-white/50 group-hover:border-[#FED45C]  flex items-center justify-center">
+                          <input 
+                            type="checkbox" 
+                            className="mt-1 opacity-0 absolute" 
+                          />
+                          <div className="w-4 h-4 border border-white/50 group-hover:border-[#FED45C] flex items-center justify-center">
                             <motion.div
                               initial={{ scale: 0 }}
                               animate={{ scale: 1 }}
-                              className="w-2 h-2 bg-[#FED45C]  hidden"
+                              className="w-2 h-2 bg-[#FED45C]"
                             />
                           </div>
                         </motion.div>
@@ -483,7 +546,7 @@ export default function TicketContactForm({ onBack }) {
                       initial="initial"
                       whileHover="hover"
                       whileTap="tap"
-                      onClick={() => setStep('done')}
+                      onClick={submit}
                       className="w-full bg-[#FED45C] text-black font-semibold py-4  relative overflow-hidden group"
                     >
                       <span className="relative z-10 flex items-center justify-center gap-2">
@@ -502,6 +565,11 @@ export default function TicketContactForm({ onBack }) {
                         transition={{ duration: 0.6 }}
                       />
                     </motion.button>
+                    {status === 'err' && (
+                      <p className="text-red-400 text-xs animate-pulse mt-2 text-center">
+                        ⚠️ Something went wrong. Try again.
+                      </p>
+                    )}
                   </motion.div>
                 </div>
               </motion.div>

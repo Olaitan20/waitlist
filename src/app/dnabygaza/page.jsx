@@ -38,6 +38,8 @@ export default function Home({ defaultTab = 'links' }) {
                 className="object-cover object-bottom"
                 priority
               />
+              {/* Overlay */}
+              <div className="absolute inset-0" style={{ backgroundColor: '#000000/50' }}></div>
             </div>
           )}
 

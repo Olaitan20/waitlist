@@ -11,7 +11,7 @@ export default function AccordionV2({ title, items, isOpen, onToggle }) {
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="w-full flex justify-between items-center px-4 py-2 bg-white/30 transition-all duration-300"
+        className="w-full flex justify-between items-center px-4 py-2 bg-[#000000]/35 transition-all duration-300"
       >
         <span className="text-[13px] font-semibold uppercase text-white">
           {title}
