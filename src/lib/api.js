@@ -3,7 +3,7 @@ import axios from "axios";
 // Simple and reliable base URL resolution
 const getBaseURL = () => {
   // Always use the environment variable if it exists
-  return process.env.NEXT_PUBLIC_API_URL || "https://abio-site-backend.onrender.com/api/v1";
+  return process.env.NEXT_PUBLIC_API_URL || "https://api.abio.site/api/v1";
 };
 
 // Create axios instance
